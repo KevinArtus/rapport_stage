@@ -1,0 +1,51 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f6baf06... add intro
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+        \paragraph{}
+         Dans le cadre de ma deuxième année du master DNR2I (Master document numérique en réseau, ingénierie de l'Internet), j'ai effectué un stage chez Business \& Decision au sein de l'agence Interakting à Caen.
+         \paragraph{}
+          Pour une durée de six mois, du 1\up{er} Avril au 30 Septembre 2015, j'ai étais intégré au sein de l'équipe de développement du projet Open Orchestra.
+         \paragraph{}
+         Dans un premier temps, je vais vous présenter succinctement l'entreprise. Ensuite, je vous décrirais le projet Open Orchestra, l'origine de celui-ci, ces particularités, etc . Enfin, je vous parlerais de l'organisation et des méthodes mises en place pour la réalisation du projet.
+<<<<<<< HEAD
+=======
+\chapter{Introduction}
+    \section{Sujet du projet}
+        \paragraph{}
+        Ce projet vise à proposer une alternative à l'implémentation actuelle du framework PHP \og{}Sydonie\fg{} en le considérant non plus comme un framework à part entière, mais comme un bundle du framework Symfony2.
+
+    \section{Contexte}
+        \subsection{Les origines de Sydonie}
+        \paragraph{}
+        Le framework \og{}Sydonie\fg{} est issu d'un projet de recherche universitaire réalisé au sein du laboratoire du GREYC\footnote{Groupe de Recherche en Informatique, Image, Automatique et Instrumentation de Caen} de l'Université de Caen Basse-Normandie et a été initié par les deux tuteurs de ce projet: Jean-Marc \textsc{Lecarpentier} et Hervé \textsc{Lecrosnier}. Il propose un modèle permettant de manipuler des documents numériques plus efficacement en se basant sur le modèle FRBR\footnote{Functional Requirements for Bibliographic Records / Fonctionnalités requises des notices bibliographiques} défini par l'IFLA\footnote{The International Federation of Library Associations and Institutions}. Ce modèle apporte notamment une solution élégante aux problèmes liés à l'internationalisation des sites internet en s'appuyant sur une sémantique mieux adaptée que les systèmes \og{}clé-valeur\fg{} que l'on peut habituellement retrouver dans le paysage des frameworks et CMS liés au développement de sites web.
+
+
+        \subsection{Les inconvénients}
+        \paragraph{}
+        Malgré les innovations et les nombreux avantages qu'il propose, Sydonie présente également des inconvénients non négligeables.
+
+        \paragraph{}
+        Tout d'abord, son développement a débuté il y a plusieurs années et a été mené par plusieurs développeurs qui ne sont plus, aujourd'hui, tous membres de l'équipe de développement. De plus, il y réside de larges parties de code qui n'ont pas systématiquement été documentées au fil des années et qui peuvent donc paraître un peu floues aujourd'hui. Ces deux facteurs rendent donc la maintenabilité du projet relativement pénible et fastidieuse.
+
+        \paragraph{}
+        Ensuite, bien que le code source du framework ait récemment été  revu intégralement afin d'y intégrer les namespace PHP, il reste encore de nombreuses fonctionnalités à développer telles que la gestion des routes ou des formulaires par exemple. Pour les chercheurs, il est donc dommageable de devoir passer du temps à développer des fonctionnalités de bas niveaux telles que celles-ci, alors que la plupart d'entre elles ont déjà été étudiées et implémentées dans d'autres frameworks.
+
+        \paragraph{}
+        Enfin, l'installation et l'initialisation d'un projet avec Sydonie est complexe. Il faut, en effet, télécharger quatre archives différentes, procéder à la configuration du framework et bien souvent adapter la configuration de la machine sur laquelle on souhaite travailler afin que l'application fonctionne correctement . De plus, la prise en main et la compréhension du modèle utilisé n'est pas si simple qu'il n'y paraît puisqu'il diffère complètement de ce que l'on peut trouver dans les autres frameworks. Il est donc à craindre que ces barrières ne découragent les futurs potentiels développeurs souhaitant travailler avec Sydonie.
+
+    \section{Enjeux}
+        \paragraph{}
+        L'enjeu majeur de ce projet est de chercher à savoir si une implémentation différente du framework Sydonie est possible sous la forme d'un module de Symfony2. Ce module devra alors permettre aux chercheurs de poursuivre leurs travaux de recherche et de travailler directement sur des fonctionnalités du modèle proposé par Sydonie. De plus, il devra être assez documenté et simple d'utilisation pour que de potentiels développeurs puissent s'y intéresser, l'utiliser et le faire évoluer.
+
+    \section{Objectifs}
+        \paragraph{}
+        Au vu des enjeux évoqués précédemment, l'objectif de ce projet va principalement être de prouver qu'une telle implémentation est possible. Il ne s'agit pas ici d'être exhaustifs et de reprendre l'intégralité des fonctionnalités de Sydonie, mais d'en extraire l'essentiel permettant d'exploiter les normes fondamentales décrites dans modèle FRBR.
+
+        \paragraph{}
+        De plus, afin de démontrer la pertinence d'un tel modèle sur le web, et notamment en ce qui concerne l'internationalisation des sites internet, il sera appréciable d'implémenter un système de négociation de contenu permettant de déterminer la version d'un document la plus pertinente pour un utilisateur donné.
+>>>>>>> 88f87b3... init
+=======
+>>>>>>> f6baf06... add intro

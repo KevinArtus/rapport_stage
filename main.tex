@@ -1,0 +1,158 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+\documentclass[a4paper, 12pt]{report}
+=======
+\documentclass[a4paper]{report}
+>>>>>>> 88f87b3... init
+=======
+\documentclass[a4paper, 12pt]{report}
+>>>>>>> f6baf06... add intro
+
+%====================== PACKAGES ======================
+
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+%pour gérer les positionnement d'images
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{url}
+%pour les informations sur un document compilé en PDF et les liens externes / internes
+\usepackage{hyperref}
+%pour la mise en page des tableaux
+\usepackage{array}
+\usepackage{tabularx}
+%pour utiliser \floatbarrier
+%\usepackage{placeins}
+%\usepackage{floatrow}
+%espacement entre les lignes
+\usepackage{setspace}
+\usepackage{lscape}
+%modifier la mise en page de l'abstract
+\usepackage{abstract}
+%police et mise en page (marges) du document
+\usepackage[T1]{fontenc}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+%Pour les galerie d'images
+\usepackage{subfig}
+
+%====================== INFORMATION ET REGLES ======================
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\hypersetup{                            % Information sur le document
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f6baf06... add intro
+pdfauthor = {Amaury Lavielle},          % Auteurs
+pdftitle = {Open Orchestra -
+            CMS Symfony2},           % Titre du document
+pdfsubject = {Rapport de stage},       % Sujet
+pdfkeywords = {Symfony2, CMS},  % Mots-clefs
+<<<<<<< HEAD
+=======
+pdfauthor = {Amaury Lavielle,
+            Antoine Lelaisant},          % Auteurs
+pdftitle = {Sydonie -
+            Création d'un bundle Symfony2 gérant des documents selon la norme FRBR},           % Titre du document
+pdfsubject = {Rapport de projet},       % Sujet
+pdfkeywords = {FRBR, Sydonie, Document, Gestion de documents},  % Mots-clefs
+>>>>>>> 88f87b3... init
+=======
+>>>>>>> f6baf06... add intro
+pdfstartview={FitH}}                    % ajuste la page à la largueur de l'écran
+
+%======================== DEBUT DU DOCUMENT ========================
+
+\begin{document}
+
+%régler l'espacement entre les lignes
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%page de garde
+\input{./title.tex}
+
+%page blanche
+~
+%ne pas numéroter cette page
+\thispagestyle{empty}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+% \input{./abstract.tex}
+\input{./remerciements.tex}
+=======
+ \input{./abstract.tex}
+
+>>>>>>> 88f87b3... init
+=======
+% \input{./abstract.tex}
+\input{./remerciements.tex}
+>>>>>>> f6baf06... add intro
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+%ne pas numéroter le sommaire
+
+%espacement entre les lignes d'un tableau
+\renewcommand{\arraystretch}{1.5}
+
+%====================== INCLUSION DES PARTIES ======================
+
+~
+\thispagestyle{empty}
+%recommencer la numérotation des pages à "1"
+\setcounter{page}{0}
+\newpage
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f6baf06... add intro
+\input{./introduction.tex}
+\part{L'entreprise}
+\input{entreprise.tex}
+\part{Open Orchestra}
+\part{Organisation du développement}
+<<<<<<< HEAD
+=======
+
+\part{Présentation}
+    \input{./introduction.tex}
+
+    \input{./sydonie.tex}
+
+    \input{./symfony2.tex}
+
+\part{Implémentation}
+    \input{./model-implementation.tex}
+
+    \input{./generator-entity.tex}
+
+    \input{./generator-crud.tex}
+
+    \input{./content-negociation.tex}
+
+    \input{./document-composite.tex}
+\part{Conclusions et perspectives}
+    \input{./bilan.tex}
+
+>>>>>>> 88f87b3... init
+=======
+>>>>>>> f6baf06... add intro
+\input{./appendix.tex}
+
+\newpage
+
+%récupérer les citation avec "/footnotemark"
+\nocite{*}
+
+%choix du style de la biblio
+\bibliographystyle{plain}
+%inclusion de la biblio
+\bibliography{bibliographie.bib}
+%voir wiki pour plus d'information sur la syntaxe des entrées d'une bibliographie
+
+\end{document}
