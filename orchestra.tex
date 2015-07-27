@@ -3,15 +3,18 @@
         \paragraph{}
         Open Orchestra est un CMS (Content Management  System) open source en développement maintenant un peu plus d'un an. 
         \paragraph{}
-        Il est basé sur le framework PHP MVC Symfony 2. En compléments des composants attendus par tous CMS tel que la gestion de contenu, une médiathèque ou encore la contribution de page Open Orchestra offre des fonctionnalités avancés comme la gestion multi-site et multi-langue mais aussi multi-device.
+        Il est basé sur le framework PHP MVC Symfony 2 et MongoDB. Open Orchestra offre bien-sûr les fonctionnalités attendus par tous CMS  : gestion de contenu, médiathèque, contribution de page, gestion de version, utilisateurs, \og worklow \fg{}, rôles,  multi-site, multi- langue,  multi-device , etc.
         \paragraph{}
-        De plus, l'une des grandes particularités d'Open Orchestra et sa modularités, c'est-à-dire que l'on peut facilement remplacer ou étendre un de ses composants.
+        La grande particularités d'Open Orchestra est son faible couplage du code mais aussi au niveau des solutions techniques, c'est-à-dire que l'on peut facilement remplacer ou étendre un de ses composants. Je reviendrais plus en détail sur ce point dans une section ultérieur.
+        
         \section{Architecture}
-        plusieurs front pour un back 
-        back api 
-        mongo 
-        schéma
+        Une des particularités d'Open Orchestra est que le \og Back-office \fg{} et le \og Front office \fg{} peuvent être dissociés dans deux applications Symfony différente. 
 
+        Ce découpage a deux nombreux avantages, tous d'abord un seul \og Back-office \fg{}  peux gérer plusieurs sites (\og Front-office \fg{}), de plus cela permet de mettre \og Back-office \fg{} et le \og Front-office \fg{} sur des serveurs différents, la seule condition est qu'ils doivent utiliser la même base de données.
+        \paragraph{}
+		Pour finir, Open Orchestra utilise une API RESTFull\footnote{REST (Representational State Transfer) est un style d'architecture qui définie différentes réglés (ressource identifié unitairement, utilisation des verbes HTTP POST, DELETE, PUT, GET) pour accéder et manipuler des ressources } pour  accéder, gérer ces différentes entités (pages, utilisateurs, contenus, etc).
+	    \paragraph{}	
+		Le schéma présente l'architecture d'Open Orchestra avec un \og Back-office \fg{} qui gère plusieurs \og Fronts \fg{}.
    
 \chapter{Fonctionnalités}
          \section{Content type}
