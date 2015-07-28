@@ -17,10 +17,26 @@
 		Le schéma présente l'architecture d'Open Orchestra avec un \og Back-office \fg{} qui gère plusieurs \og Fronts \fg{}.
    
 \chapter{Fonctionnalités}
+	    \paragraph{}
+	    Dans ce chapitre je vais vous présenter les fonctionnalités d'Open Orchestra. Bien sur, je ne vais pas détailler tous les fonctionnalités juste les points clés pour une meilleur compréhension du projet.
+	      \section{Blocks}  
+         \section{Nodes}
+         \paragraph{}
+         Un des points central d'un CMS est les pages. Sur Open Orchestra les pages sont identifiés comme des noeuds (\og nodes \fg{}).
+          Les nodes sont simplement des conteneurs pour les zones et les blocs.
+         Il existe trois types de nodes : 
+         \begin{itemize}
+         \item[]
+         \item  Les nodes qui représentent les pages visibles en \og front \fg{}.
+          \item[]
+         \item  Les \og node tranverse \fg{} qui contiennent les blocs transverses, c'est-à-dire les blocs qui sont communs à plusieurs pages comme le bloc \og header \fg{} ou encore le bloc \og footer \fg{}.
+          \item[]
+         \item Le dernier type de nodes sont ceux qui permettent de contribuer les pages d'erreurs (404, 503) d'un site.
+         \end{itemize}
+
          \section{Content type}
-          \section{Nodes}  
           \section{Zones}  
-          \section{Blocks}  
+
 \chapter{Caractéristiques}
    \section{Performance}
    cache esi
