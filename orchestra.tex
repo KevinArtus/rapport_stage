@@ -2,6 +2,7 @@
 \section{Présentation}
         \paragraph{}
         Open Orchestra est un CMS (Content Management  System) open source en développement maintenant un peu plus d'un an. 
+        TODO : Encore en dévellopement v1 septembre
         \paragraph{}
         Il est basé sur le framework PHP MVC Symfony 2 et MongoDB. Open Orchestra offre bien-sûr les fonctionnalités attendus par tous CMS  : gestion de contenu, médiathèque, contribution de page, gestion de version, utilisateurs, \og worklow \fg{}, rôles,  multi-site, multi- langue,  multi-device , etc.
         \paragraph{}
@@ -19,11 +20,27 @@
 \chapter{Fonctionnalités}
 	    \paragraph{}
 	    Dans ce chapitre je vais vous présenter les fonctionnalités d'Open Orchestra. Bien sur, je ne vais pas détailler tous les fonctionnalités juste les points clés pour une meilleur compréhension du projet.
-	      \section{Blocks}  
+	      \section{Blocs}  
+	       \paragraph{}
+	      Dans Open Orchestra tous les éléments visible en front sont représenté par des blocs. Enfaite un bloc est simplement une entité avec un certains nombre d'attribut qui varient selon le type de block, chaque type de bloc sont indépendant, c'est à dire que eux seul connaissent leurs attributs, leurs façon se d'affiche en front ou en back-office ou encore la façon dont on peut les contribuer en back-office. 
+	       \paragraph{}
+	       Pour permettre cette indépendance, on utilise le design pattern stratégie. Le pattern stratégie permet de rendre une famille d'algorithmes interchangeables et ainsi la possibilité d'exécuter un traitement spécifique selon le contexte.
+
+          \paragraph{}
+	       Comme le présente le schéma  pour l'affichage en front d'un bloc, chaque bloc possède une classe qui indique comment doit s'afficher le bloc pour cela elle a deux méthode, la première qui indique le bloc qu'elle supporte (\verb?support?) et la méthode \verb?show? qui fournis le rendu, d'un autre coté il y a une classe que l'on appelle \verb?manager?  qui est la seule a connaitre toutes les stratégies des différents bloc. 
+
+         \paragraph{}
+	       Ainsi, lorsque que l'on désire afficher un bloc, il suffit de demander au manager d'afficher ce bloc, ce dernier va chercher parmi les stratégies qu'il connait laquelle supporte (méthode \verb?support? le bloc et s'il en trouve une alors il exécute la méthode show de la stratégie.
+	        
+	      	\paragraph{}
+	      	Par défaut, le CMS propose de nombreux type blocs  comme par exemple un bloc pour liste un type de contenu, un bloc pour afficher un texte quelconque formaté, pour afficher un carrousel ou un média, un menu, une carte, un bloc de contact, etc.
+	      \paragraph{}
+	      	 Bien-sûr, il possible pour un intégrateur \footnote{Dans le cadre de ce rapport un intégrateur indique une personne ou une équipe qui utilise Open Orchestra et l'étende pour des besoins particulier}, de créer son propre type de bloc, il lui suffit de développer les différentes stratégies (affichage en front et back-office, formulaire en back-office, etc) nécessaire a un bloc.  
          \section{Nodes}
          \paragraph{}
          Un des points central d'un CMS est les pages. Sur Open Orchestra les pages sont identifiés comme des noeuds (\og nodes \fg{}).
-          Les nodes sont simplement des conteneurs pour les zones et les blocs.
+          Les nodes sont simplement des conteneurs qui contient des zones. Les zones permettent d'organiser la pages, elles contiennent des sous-zones ou des blocs ce qui permet un découpage fin de la page pour simplifier sont organisation. 
+         \paragraph{}
          Il existe trois types de nodes : 
          \begin{itemize}
          \item[]
@@ -33,17 +50,30 @@
           \item[]
          \item Le dernier type de nodes sont ceux qui permettent de contribuer les pages d'erreurs (404, 503) d'un site.
          \end{itemize}
-
+         \paragraph{}
+		Le schéma montre un exemple typique de page avec trois zones, le header qui contient un bloc menu, le footer un bloc footer et une zone principale découpé elle-même en deux zones avec un bloc de contact pour la zone de droite et un bloc de texte à gauche   
          \section{Content type}
-          \section{Zones}  
-
+         Un autre aspect important d'un CMS est les contenus avec Open Orchestra il est facile de créer des types de contenus (news, client, etc, ...).
+          \paragraph{}
+          En effet, Open Orchestra propose une approche graphique grâce a un formulaire pour créer ou éditer des types de contenus comme l'illustre la figure.
+          Un type de contenus est composé de différent champs avec différent option, par exemple pour un champ de type texte il peut y avoir une option pour limiter le nombre de caractère ou encore une valeur par défaut.
+          \paragraph{}
+          Par défaut, Open Orchestra offre quelques types de champs (date, texte, monnaie, média, email, entier, zone de texte riche, etc). Comme pour tous les composants d'Open Orchestra il est possible pour les intégrateurs d'ajouter d 'autre type de champ avec ces options.  
 \chapter{Caractéristiques}
    \section{Performance}
+   Open Orchestra a était développé pour supporter de grosse charge de trafic. Pour cela le CMS exploite notamment l'ESI (Edge Side Includes) couplé a un serveur de cache tel que Varnish.
+   \paragraph{}
+   L'ESI est un langage de balisage HTML qui permet de diviser une page en différent éléments dont les rendus est fait dans différentes requêtes par le serveur web. Ce qui permet d'avoir un cache HTTP sur les différents éléments et ainsi rafraichir seulement les éléments obsolètes de la page et non toute la page.
+   
    cache esi
    varnish 
+   example schéma
    \section{Modularités}
-   decouplage bundles
+   description des différents bundles
+   découplage bundles
    possibilité de désactivé bundle
+   exemple médiathéque ou la base de données.
+   
         
         
         
