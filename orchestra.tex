@@ -61,19 +61,20 @@
           Par défaut, Open Orchestra offre quelques types de champs (date, texte, monnaie, média, email, entier, zone de texte riche, etc). Comme pour tous les composants d'Open Orchestra il est possible pour les intégrateurs d'ajouter d 'autre type de champ avec ces options.  
 \chapter{Caractéristiques}
    \section{Performance}
-   Open Orchestra a était développé pour supporter de grosse charge de trafic. Pour cela le CMS exploite notamment l'ESI (Edge Side Includes) couplé a un serveur de cache tel que Varnish.
+   Open Orchestra a était développé pour supporter de grosse charge de trafic. Pour cela le CMS exploite au niveau du front l'ESI (Edge Side Includes) couplé a un reverse proxy\footnote{Un reverse proxy est un serveur qui traite les requêtes en amont du serveur web. L'intéret d'un rervese proxy est multiple gestion de cache, chiffrement, répartition de chage} tel que Varnish.
    \paragraph{}
    L'ESI est un langage de balisage HTML qui permet de diviser une page en différent éléments dont les rendus est fait dans différentes requêtes par le serveur web. Ce qui permet d'avoir un cache HTTP sur les différents éléments et ainsi rafraichir seulement les éléments obsolètes de la page et non toute la page.
-   
-   cache esi
-   varnish 
-   example schéma
+   \paragraph{}
+   Comme nous l'avons vue dans la section sur Open Orchestra les pages sont déjà découpé en différent blocs, l'utilisation de l'ESI permet nettement l'amélioration des performances.
+
+   Si nous reprenons l'exemple de notre page (Numéro), le schéma présente le processus effectué par le serveur dans le cas où les blocs \verb?header? et \verb?footer? sont déjà en cache lorsqu'un utilisateur demande la page.
+
+   http://naholyr.fr/2011/03/varnish-edge-side-includes-cache-partiel/
    \section{Modularités}
-   description des différents bundles
-   découplage bundles
-   possibilité de désactivé bundle
-   exemple médiathéque ou la base de données.
+   Comme je vous l'explicais en introduction un des particularités d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles \footnote{Sous Symfony2 un bundle est un ensemble de fichiers structurés(contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une ou des fonctionnalités qui dans l'idéale peut être réutilisé dans différent projets}
+   \paragraph{}
+   \begin{itemize}
    
-        
-        
-        
+   description des différents bundles
+   possibilité de désactivé bundle
+   exemple médiathéque ou la base de données. 
