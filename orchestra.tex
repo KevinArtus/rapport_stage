@@ -74,7 +74,9 @@
    Comme je vous l'explicais en introduction un des particularités d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles \footnote{Sous Symfony2 un bundle est un ensemble de fichiers structurés(contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une ou des fonctionnalités qui dans l'idéale peut être réutilisé dans différent projets}
    \paragraph{}
    \begin{itemize}
-   
-   description des différents bundles
-   possibilité de désactivé bundle
-   exemple médiathéque ou la base de données. 
+   \end{itemize}
+   \paragraph{}
+   Ainsi ce découpage fin a de nombreux avantages, il permet de désactivé facilement une fonctionnalités . Par exemple, si un intégrateur n'a pas bessoin de gérer des médias il peut alors désactivés la médiathèque en installant par les bundles.
+
+   \paragraph{}
+   Un autre avantage est la facilité de remplacement d'un composants. Par défaut Open Orchestra utilise \verb?MongoDB? comme système de gestion de base de données mais si un intégrateur veut utiliser une autre système comme \verb?Mysql? alors il lui suffit de alors d'écrive son propre verb?modelBundle? qui utilise biensûr les différentes interfaces de \verb?modelInterface? mais adapté a \verb?Mysql?.
