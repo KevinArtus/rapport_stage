@@ -70,13 +70,28 @@
    Si nous reprenons l'exemple de notre page (Numéro), le schéma présente le processus effectué par le serveur dans le cas où les blocs \verb?header? et \verb?footer? sont déjà en cache lorsqu'un utilisateur demande la page.
 
    http://naholyr.fr/2011/03/varnish-edge-side-includes-cache-partiel/
+   
    \section{Modularités}
    Comme je vous l'explicais en introduction un des particularités d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles \footnote{Sous Symfony2 un bundle est un ensemble de fichiers structurés(contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une ou des fonctionnalités qui dans l'idéale peut être réutilisé dans différent projets}
    \paragraph{}
    \begin{itemize}
+   \item \textbf{open-orchestra-base-bundle} : Classes communes au back-office et front-office
+   \item \textbf{open-orchestra-base-api-bundle} : Api d'Open Orchestra
+   \item \textbf{open-orchestra-base-api-mongo-model-bundle} : Implémentation des models nécessaire à l'api pour \verb?MongoDB? 
+   \item \textbf{open-orchestra-cms-bundle} : Logique du back-office
+   \item \textbf{open-orchestra-front-bundle} : Logique du front-office
+   \item \textbf{open-orchestra-display-bundle} : Logique d'affichage des blocs en Front-office
+   \item \textbf{open-orchestra-media-bundle} : Médiathéque d'Open Orchestra
+   \item \textbf{open-orchestra-media-admin-bundle} : Administration de la médiathéque d'Open Orhcestra
+   \item \textbf{open-orchestra-model-interface} : Interface des models utilisé par les autres bundles 
+   \item \textbf{open-orchestra-model-bundle} : Implémentation des models pour \verb?MongoDB? 
+   \item \textbf{open-orchestra-user-bundle} : Gestion des utilisateurs 
+   \item \textbf{open-orchestra-workflow-function-bundle} : Système de fonction worklow pour la gestion en back-office 
    \end{itemize}
    \paragraph{}
-   Ainsi ce découpage fin a de nombreux avantages, il permet de désactivé facilement une fonctionnalités . Par exemple, si un intégrateur n'a pas bessoin de gérer des médias il peut alors désactivés la médiathèque en installant par les bundles.
+   Ainsi ce découpage fin a de nombreux avantages. Une application front-office n'a aucun intérét à charger toute la logique du back-office ainsi grâce a ce découpage chaque application (front-office ou back-office) charge uniquement les composant qui lui sont nécéssaire.
+   \paragraph{}
+   De plus, cela permet de désactiver facilement une fonctionnalités. Par exemple, si un intégrateur n'a pas bessoin de gérer des médias il peut alors désactiver la médiathèque en n'utilisant par les bundles (\verb?open-orchestra-media-bundle? et \verb?open-orchestra-media-admin-bundle?).
 
    \paragraph{}
-   Un autre avantage est la facilité de remplacement d'un composants. Par défaut Open Orchestra utilise \verb?MongoDB? comme système de gestion de base de données mais si un intégrateur veut utiliser une autre système comme \verb?Mysql? alors il lui suffit de alors d'écrive son propre verb?modelBundle? qui utilise biensûr les différentes interfaces de \verb?modelInterface? mais adapté a \verb?Mysql?.
+   Un autre avantage est la facilité de remplacement d'un composants. Par défaut Open Orchestra utilise \verb?MongoDB? comme système de gestion de base de données mais si un intégrateur veut utiliser une autre système comme \verb?Mysql? alors il lui suffit de alors d'écrive son propre \verb?open-orchestra-model-bundle? qui utilise biensûr les différentes interfaces de \verb?open-orchestra-model-interface? mais adapté a \verb?Mysql?.
