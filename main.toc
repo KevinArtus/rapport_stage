@@ -40,5 +40,10 @@
 \contentsline {chapter}{\numberline {4}Caract\IeC {\'e}ristiques}{9}{chapter.4}
 \contentsline {section}{\numberline {4.1}Performance}{9}{section.4.1}
 \contentsline {paragraph}{}{9}{section*.30}
+\contentsline {paragraph}{}{9}{section*.31}
 \contentsline {section}{\numberline {4.2}Modularit\IeC {\'e}s}{9}{section.4.2}
-\contentsline {part}{III\hspace {1em}Organisation du d\IeC {\'e}veloppement}{10}{part.3}
+\contentsline {paragraph}{}{9}{section*.32}
+\contentsline {paragraph}{}{10}{section*.33}
+\contentsline {paragraph}{}{10}{section*.34}
+\contentsline {paragraph}{}{10}{section*.35}
+\contentsline {part}{III\hspace {1em}Organisation du d\IeC {\'e}veloppement}{11}{part.3}
