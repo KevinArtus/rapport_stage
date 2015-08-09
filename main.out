@@ -4,19 +4,20 @@
 \BOOKMARK [1][-]{section.1.1}{Business \046 Decision}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.2}{Interakting}{chapter.1}% 5
 \BOOKMARK [-1][-]{part.2}{II Open Orchestra}{}% 6
-\BOOKMARK [0][-]{chapter.2}{Le projet}{part.2}% 7
+\BOOKMARK [0][-]{chapter.2}{Orchestra}{part.2}% 7
 \BOOKMARK [1][-]{section.2.1}{Pr\351sentation}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.2}{Architecture}{chapter.2}% 9
-\BOOKMARK [0][-]{chapter.3}{Fonctionnalit\351s}{part.2}% 10
-\BOOKMARK [1][-]{section.3.1}{Blocs}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.2}{Nodes}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.3}{Content type}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{Caract\351ristiques}{part.2}% 14
-\BOOKMARK [1][-]{section.4.1}{Performance}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{Modularit\351s}{chapter.4}% 16
+\BOOKMARK [1][-]{section.2.3}{Fonctionnalit\351s}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{Blocs}{section.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.3.2}{Nodes}{section.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.3.3}{Content type}{section.2.3}% 13
+\BOOKMARK [1][-]{section.2.4}{Caract\351ristiques}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.4.1}{Performance}{section.2.4}% 15
+\BOOKMARK [2][-]{subsection.2.4.2}{Modularit\351s}{section.2.4}% 16
 \BOOKMARK [-1][-]{part.3}{III Organisation du d\351veloppement}{}% 17
-\BOOKMARK [0][-]{chapter.5}{Gestion de projet agile}{part.3}% 18
-\BOOKMARK [1][-]{section.5.1}{M\351thodes agiles}{chapter.5}% 19
-\BOOKMARK [1][-]{section.5.2}{Scrum avec Open Orchestra}{chapter.5}% 20
-\BOOKMARK [0][-]{chapter.6}{Int\351gration continue}{part.3}% 21
-\BOOKMARK [0][-]{chapter.7}{Qualit\351 du code}{part.3}% 22
+\BOOKMARK [0][-]{chapter.3}{Organisation du d\351veloppement}{part.3}% 18
+\BOOKMARK [1][-]{section.3.1}{Gestion de projet agile}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.1}{M\351thodes agiles}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.2}{Scrum avec Open Orchestra}{section.3.1}% 21
+\BOOKMARK [1][-]{section.3.2}{Int\351gration continue}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.3}{Qualit\351}{chapter.3}% 23

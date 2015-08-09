@@ -1,7 +1,8 @@
+\chapter{Organisation du développement}
 Introduction, pas eu de tâche particulière intégration au sein de l'équipe avec diff tâches (ajout fonctionnalités, correction bug, Documentation en aglais, refacto, optimisation, formation
 
-\chapter{Gestion de projet agile}
-\section{Méthodes agiles}
+\section{Gestion de projet agile}
+\subsection{Méthodes agiles}
 \paragraph{}
 Le projet a été mené selon une approche agile. La gestion de projet agile repose sur un développement itératif qui consiste à découper un projet en plusieurs itérations appelé sprint. Les méthodes agiles définis plusieurs valeurs fondamentales : 
 \begin{itemize}
@@ -31,21 +32,47 @@ Cette réunion permet à tous les membres de connaître les tâches de chacun af
 Pour finir à la fin du sprint, les membres de l'équipe se réunisse pour la revue de sprint durant laquelle les différentes tâches réalisés durant le sprint sont présentés et validés. Puis pour la rétrospective qui permet de mettre en évidence les points positif et les actions a mettre en place pour améliorer le prochain sprint.
 
 SCHEMA (schéma sprint)
-\section{Scrum avec Open Orchestra}
+\subsection{Scrum avec Open Orchestra}
+Au sein du projet Open Orchestra, la méthode Scrum est appliqué.. Ainsi des sprint de une semaine avec un daily scrum tous les jours a midi.
+De plus, tous les mercredis ou mardis selon les disponibilités une \og cérémonie \fg{} qui comprend la réunion de planification et la rétrospective.
+Concernant, la revue de sprint (validation des taches du sprint) celle-ci n'est pas faite durant une réunion définis mais tout au long du sprint par le product ownver.
+ \paragraph{}
+ Pour faciliter la mise en place de la méthode Scrum, l'équipe utilise différent outils.
+ Tous d'abord Skype et Slack\footnote{Slack est une plateforme de communication réalisé en 2014 qui permet d'intégrer facilement différents outils de service en ligne tel que github, trello, dropbox, google drive, ...)} pour la communication.
+  \paragraph{}
+ Et enfin Trello pour organiser les tâches, en effet l'équipe possédé un \verb?board? avec différentes colonnes pour organiser les tâches : 
+ \begin{itemize}
+ \item[]
+ \item \textbf{Backlog} : le backlog qui contient les différentes tâches a effectué pour le projet, le tâches du backlog sont organisées en quatre colonnes (Nice to have, Good, Great, Must have) selon la priorité de la tâche.
+ \item \textbf{Support} : Les demandes effectué par les différentes équipes d'intégrateur d'Open Orchestra au sein d'Interakting.
+ \item \textbf{Proposition} : Les différentes propositions d'amélioration ou de re- factorisation du code faites par les membres de l'équipe.
+ \item \textbf{Bugs} : Les différents bug rencontrés durant le développement
+ \item \textbf{Todo} : Les taches a effectuer durant le sprint en cours.
+ \item \textbf{Doing} : Les taches actuellement en développement.
+ \item \textbf{Blocked} : Les taches bloqué pour différentes raison (manque de précision de la tache, bug empêchant la réalisation de la taches)
+ \item \textbf{ToDeploy} : Taches réalisés qui sont prêtes a être déployé sur le serveur d'intégration.
+ \item \textbf{ToValidate} : Taches du sprint en attente de validation par le product owner.
+ \item \textbf{Failed} : Taches du sprint e non validé par le product owner
+ \item \textbf{Done} : Taches du sprint validé par le product owner
+ \item[]
+ \end{itemize}
+Les colonnes \verb?ToDeploy?, \verb?Done? sont unique a un sprint, il y a donc une colonne  différent\verb?ToDeploy?, \verb?Done? pour chaque sprint.
+  \paragraph{}
+  
 MIse en place au sein de l'équipe (Trello, cérémonie, dayly)
 détaille des colonnes trello 
 Céremonie toutes les semaines,
 Daily tous les midis (indique ce que l'on a fait et que ce compte faire permet de savoir qui fait quoi en permancence, 
 prévenir si l'on voit un problème)
 Workflow d'un ticket (colonnes backlog , TODO, Doing, ToValidate => Faile, Done)
-\chapter{Intégration continue}
+\section{Intégration continue}
 Git (Worflow, tag, travis) 
 Utilisation de Git , présentatation rapide de git et github
 Systémé de PR avec validation par l'équipe. 
 Pour eviter au maximun les régréssion utilsiation de travis description plus tard)
 Plate forme d'integration (la ou valide le PO), un déploiement plusieurs fois par jour sur l'environnement prod) utililisation capistrano ( présentation de l'outil) 
 Deploiement (capistrano)
-\chapter{Qualité du code}
+\section{Qualité}
 PSR2 (qu'est ce que c'est, présentation)
 code climate (outil qui vérifie la qualité du code et fournis une note) 
 SensioInsignt (Outil de qualite d'application Symfony)

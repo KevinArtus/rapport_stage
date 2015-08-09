@@ -1,4 +1,4 @@
-\chapter{Le projet}
+\chapter{Orchestra}
 \section{Présentation}
         \paragraph{}
         Open Orchestra est un CMS (Content Management  System) open source en développement depuis un peu plus d'un an. Il est actuellement en version bêta, la sortie de la première version est prévus pour le mois de septembre.
@@ -24,10 +24,10 @@
       \end{figure}
 
    
-\chapter{Fonctionnalités}
+\section{Fonctionnalités}
 	    \paragraph{}
 	    Dans ce chapitre je vais vous présenter les différentes fonctionnalités d'Open Orchestra. Bien sûr, je ne vais pas tous les détailler, mais uniquement les points clés qui permettent une bonne compréhension du projet.
-	      \section{Blocs}
+	      \subsection{Blocs}
 	        \label{Blocs}  
 	       \paragraph{}
 	      Dans Open Orchestra tous les éléments visibles en front sont représentés par des blocs. Un bloc est simplement une entité avec des attributs qui varient selon le type de bloc. Chaque type de bloc sont indépendant, c'est-à-dire que eux seul connaissent leurs attributs, leurs façon de s'afficher en front ou en back-office ou encore la façon dont ils peuvent être contribué en back-office. 
@@ -50,7 +50,7 @@
 	      	Par défaut, le CMS propose de nombreux types blocs  comme par exemple un bloc pour lister un type de contenu, afficher un texte formaté, afficher un carrousel ou un média, un menu, une carte, un bloc de contact, etc.
 	      \paragraph{}
 	      	 Bien-sûr, il possible pour un intégrateur \footnote{Dans le cadre de ce rapport un intégrateur indique une personne ou une équipe qui utilise Open Orchestra afin de  l'étendre pour des besoins particuliers}, de créer son propre type de bloc, il lui suffit de développer les différentes stratégies (affichage en front et back-office, formulaire en back-office, etc) nécessaire à un bloc.  
-         \section{Nodes}
+         \subsection{Nodes}
          \paragraph{}
          Un des points central d'un CMS est les pages. Sur Open Orchestra les pages sont identifiées comme des noeuds (\og nodes \fg{}).
           Les nodes sont simplement des conteneurs qui contiennent des zones. Les zones permettent d'organiser la page, elles contiennent des sous-zones ou des blocs ce qui permet un découpage fin de la page pour simplifier sont organisation. 
@@ -73,15 +73,15 @@
         \caption{Exemple de page}
         \label{node}
       \end{figure}
-         \section{Content type}
+         \subsection{Content type}
          Le second point important d'un CMS est les contenus avec Open Orchestra il est facile de créer des types de contenus (actualité, client, etc, ...).
           \paragraph{}
           En effet, Open Orchestra propose une approche graphique grâce à un formulaire pour créer ou éditer des types de contenus comme l'illustre la figure.
           Un type de contenu est composé de différent champs avec différente option, par exemple pour un champ de type texte il peut y avoir une option pour limiter le nombre de caractère ou encore une valeur par défaut.
           \paragraph{}
           Par défaut, Open Orchestra offre une liste de types de champs (date, texte, monnaie, média, email, entier, zone de texte riche, etc) qui comme pour tous les composants d'Open Orchestra peut être étendu par d'autre type de champ personnalisé. 
-\chapter{Caractéristiques}
-   \section{Performance}
+\section{Caractéristiques}
+   \subsection{Performance}
    Open Orchestra a été développé pour supporter une charge de trafic importante. Pour cela le CMS exploite au niveau du front l'ESI (Edge Side Includes) couplé à un reverse proxy\footnote{Un reverse proxy est un serveur qui traite les requêtes en amont du serveur web. L'intérêt d'un reverse proxy est multiple gestion de cache, chiffrement, répartition de charge}.
    \paragraph{}
    L'ESI est un langage de balisage HTML qui permet de diviser une page en différent éléments dont les rendus sont faits dans différentes requêtes par le serveur web. Ce qui permet d'avoir un cache HTTP sur les différents éléments et ainsi rafraichir seulement les éléments obsolètes de la page et non toute la page.
@@ -97,7 +97,7 @@
         \label{esi}
       \end{figure}
    
-   \section{Modularités}
+   \subsection{Modularités}
    Comme je vous l'expliquais en introduction la principale particularité d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles \footnote{Sous Symfony2 un bundle est un ensemble de fichiers structurés (contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une ou des fonctionnalités qui dans l'idéale peuvent être réutilisés dans différent projets}
    \paragraph{}
    \begin{itemize}
