@@ -76,12 +76,25 @@ La mise en place de cette technique nécéssite différentes pré-requis :
 \end{itemize}
 
 \subsection{git}
-Dans le cadre d'Open Orchestra le code source est versionné avec git\footnode{Git est un lgociel de versionning décentralisé, c'est-à-dire qu'il n'existe pas un dépôt unique mais un dépot local pour chaque développeurs.} et utilise GitHub qui est un service web permettant d'heberger un dépôt git.
+Dans le cadre d'Open Orchestra, le code source est versionné avec git\footnode{Git est un lgociel de versionning décentralisé, c'est-à-dire qu'il n'existe pas un dépôt unique mais un dépot local pour chaque développeurs.} et utilise GitHub qui est un service web permettant d'heberger un dépôt git. Comme je l'expliquais lors des présentations des caractèristiques d'Open Orchestra, ce dernier est découpé en plusieurs bundles et donc chaque bundles posséde son propre dépôt sur GitHub.
+\paragraph{}
+Open orchestra étant toujours en version béta, il n'y a pas de realease a proprement parlé. Ainsi le worklow de dévellopement sur github est simplifié car il n'y a qu'une seule branche stable, la branche maste. Les autres branches sont des branches temporaires d'ajout de fonctionnalités ou de correction de bugs. Ce type de workflow est appellé \verb?GitHub flow? et est représenté par le schéma.
+\paragraph{}
+Ainsi avec ce type de workflow, la modification du code source que ce soit pour corriger un bug ou ajouter une fonctionnalités s'effectue toujours de la même manière : 
+\begin{enumerate}
+\item[]
+\item Mettre à jour sa branche master en local
+\item Créer une nouvelle branche en local à partir de master
+\item Effectuer les modifications dans cette branche
+\item Pousser sa branche sur GitHub (origin)
+\item Vérifier que les tests fonctionnne, je reviendrais plus en détail sur ce point par la suite
+\item Ouvrir une pull-request, sur GitHub une pull-request consiste à faire une proposition de modification, à partir de cette pull-request les différents membres peuvent commenter, valider ou non la modification.
+\end{itemize}
 
+Une fois la pull-request validé, elle peut être mergé avec master, c'est-à-dire inclure la modification dans la branche master.
+\paragraph{}
+Lorsqu'une branche est poussé sur l'un des dépôts GitHub du projet, les tests sont automatiquement lancé. Pour cela, les différents dépôts du projet intégre un outil \verb?Travis CI?. Travais CI 
 
-Git (Worflow, tag, travis, git-flow) 
-Utilisation de Git , présentatation rapide de git et github
-Systémé de PR avec validation par l'équipe. 
 Pour eviter au maximun les régréssion utilsiation de travis description plus tard)
 Plate forme d'integration (la ou valide le PO), un déploiement plusieurs fois par jour sur l'environnement prod) utililisation capistrano ( présentation de l'outil) 
 Deploiement (capistrano)
