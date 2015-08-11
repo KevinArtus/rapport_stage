@@ -57,16 +57,29 @@ Concernant, la revue de sprint (validation des taches du sprint) celle-ci n'est 
  \item[]
  \end{itemize}
 Les colonnes \verb?ToDeploy?, \verb?Done? sont unique a un sprint, il y a donc une colonne  différent\verb?ToDeploy?, \verb?Done? pour chaque sprint.
-  \paragraph{}
-  
-MIse en place au sein de l'équipe (Trello, cérémonie, dayly)
-détaille des colonnes trello 
-Céremonie toutes les semaines,
-Daily tous les midis (indique ce que l'on a fait et que ce compte faire permet de savoir qui fait quoi en permancence, 
-prévenir si l'on voit un problème)
-Workflow d'un ticket (colonnes backlog , TODO, Doing, ToValidate => Faile, Done)
+\paragraph{}
+Par exemple, une tâches suit un processus, présenté par le schéma, bien particulier entre l'intrégration de la tache dans la sprint et ca validation par le product ownver. Ce processus permet de suivre facilement l'avancement ou encore les différents problèmes rencontrés sur les différentes tâches par tous les membres de l'équipe.
 \section{Intégration continue}
-Git (Worflow, tag, travis) 
+Pour le dévellopement d'Open Orchestra les principes de l'intégration continue sont utilisés. 
+\begin{quotation}
+L'intégration continue est un ensemble de pratiques utilisées en génie logiciel consistant à vérifier à chaque modification de code source que le résultat des modifications ne produit pas de régression dans l'application développée.
+\end{quotation}
+L'utilisation de ces pratiques apporte de nombreux avantages, tous d'abord comme il est indiqué dans la citation cela permet de minimiser les régréssions mais aussi d'avoir a tous moment un produit (logiciel, site, etc) utilisable.
+\paragraph{}
+La mise en place de cette technique nécéssite différentes pré-requis : 
+\begin{itemize}
+\item[]
+\item Dépot unique de code source versionné
+\item Automatisation des tests
+\item Un environnement similaire a celui de production
+\item Automatiser le deploiement
+\end{itemize}
+
+\subsection{git}
+Dans le cadre d'Open Orchestra le code source est versionné avec git\footnode{Git est un lgociel de versionning décentralisé, c'est-à-dire qu'il n'existe pas un dépôt unique mais un dépot local pour chaque développeurs.} et utilise GitHub qui est un service web permettant d'heberger un dépôt git.
+
+
+Git (Worflow, tag, travis, git-flow) 
 Utilisation de Git , présentatation rapide de git et github
 Systémé de PR avec validation par l'équipe. 
 Pour eviter au maximun les régréssion utilsiation de travis description plus tard)
