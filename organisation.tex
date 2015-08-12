@@ -106,7 +106,9 @@ Ainsi avec ce type de workflow, la modification du code source que ce soit pour 
 
 Une fois la pull-request validé, elle peut être mergé avec master, c'est-à-dire inclure la modification dans la branche master.
 \paragraph{}
-@TODO  GITHUB tag
+Comme je l'ai précisé en début de section pour le moment Open Orchestra ne possédé pas de branche realease. Toutefois le projet Open Orchestra est déjà utilisé par des intégrateurs pour réaliser des sites a distanciation de différent clients, il ne peuvent donc pas utiliser directement la branche master, ils leurs fait des points d'arrêts. Pour cela, sauf cas particulier (bug bloquant, besoins particulier) la branche master est \verb?taggé? toute les deux semaines environs ainsi cela permet à l'équipe d'Open Orchestra de continuer le développement  du projet et aux intégrateurs d'avoir un version fixe de la branche master qu'il mettre à jour au moment le plus opportunt pour eux.  Lorsque Open Orchestra ne sera plus en bêta cela changera la version 1 aura sa propre branche dans la quelle aucune nouveautés sera intégré or mis les corrections de bug.
+
+@TODO  Explication des tag github.
 \subsection{Travis CI}
 Lorsqu'une branche est poussé sur l'un des dépôts GitHub du projet, les tests sont automatiquement lancé. Pour cela, les différents dépôts du projet intégre un outil \verb?Travis CI?. Travais CI est un service qui est liée a GitHub, il permet de lancer à déclencher un certains nombre de tâches lors d'événement sur le dépôt. Dans le cas d'Open Orchestra Travis CI permet de lancer les tests unitaires après chaque \verb?push? sur un dépôt. Un des avantages de travis est qu'il se configure très facilement grâce un fichier yaml @TODO footnote yaml.
 \paragraph{}
@@ -142,11 +144,42 @@ Ainsi, si un déploiement provoque des erreurs, il suffit de faire pointé le li
 @TODO Schéma resumé de capistrano
 
 \section{Qualité}
+L'équipe d'Open Orchestra essaye de fournir un produit de qualité que ce soit au niveau du code, du couplage ou encore du fonctionnel. Pour cela différente pratique, outils sont mise en place.
 \subsection{Qualité du code}
-PSR2 (qu'est ce que c'est, présentation)
-code climate (outil qui vérifie la qualité du code et fournis une note) 
-SensioInsignt (Outil de qualite d'application Symfony) 
+Tous d'abord au niveau du code Open Orchestra utilise le standard PSR-2. PSR-2 est un ensemble de recommandation sur le style et l'organisation du code dont voici les plus importantes : 
+\begin{itemize}
+\item[]
+\item La tag de fermeture \verb?\?>. doit être omis de tous les fichiers contenant uniquement du PHP
+\item Tous les fichiers PHP doivent se terminer par une ligne vide.
+\item La visibilité doit être déclarée sur toutes les propriétés et méthodes.
+\item L'ouverture des accolades pour les classes, les méthodes doit figurer sur la ligne suivante, les accolades de fermeture DOIVENT figurer sur la ligne suivante après le corps de la classe.
+\item Il doit y avoir un espace après la structure clé de contrôle et pas d'espace après la parenthèse ouvrante et avant la parenthèse fermante
+\item Il doit y avoir un espace entre la parenthèse fermante d'une structure de contrôle et de l'accolade
+ ouvrante
+ \item L'accolade fermante d'une structure de contrôle doit être sur la ligne suivante après le corps
+ \item[]
+\end{itemize}
+\paragraph{}
+Utiliser cette recommandations permet une harmonisation du code et ainsi il est plus simple pour toute l'équipe de relire et reprendre le code d'un autre membre mais aussi pour tous les développeurs qui utilise Symfony 2 puisque ce dernier utilise aussi les recommandations PSR-2
+\paragraph{}
+Lors de revue de code des pull-request, il n'est pas toujours aisé de détecter l'utilisation des bonnes pratiques ou non. Il existe des outils qui permettent d'analyser le code automatiquement et de détecter les oublis lors de la revue.
+\paragraph{}
+Pour le projet Open Orchestra deux outils sont utilisés : 
+\paragraph{}
+Tous d'abord, Code Climate s'interface avec les dépôts c'est à dire que lors d'un push le code est analysé.
+Code Climate permet de détecter la duplication de code, la couverture des tests, la qualité globale du projet. De plus, il fournis une note indique la qualité globale du dépôt. 
+Le second outil est SensioInsignt fonctionne de la même façon que Code Climate mais en supplément des vérifications sur les bonne pratiques de Symfony 2.
 \subsection{Test}
+Le plus grand intérêt des tests est qu'ils permettent de réduire les régressions lorsque l'on applique des modifications a une applications. En effet, lorsqu'une application devient assez conséquente il n'est pas toujours aisé d'anticiper toutes les répercutions lorsque l'on modifie une portion de code. Les tests permettent donc de tester l'ensemble de l'application et ainsi vérifier que cette dernière fonctionne toujours correctement après les modifications effectué. 
+De plus, ils sont en générale gage de qualité
+ \paragraph{}
+ Il existe deux grandes familles de test, Tous d'abord les tests unitaires qui permettent de vérifier que chaque méthode et fonction fonctionne correctement, les test doit être indépendant au maximum les uns des autres pour cela il existe des oulits (@TODO les MOCKS) .
+ D'autre part les tests fonctionnels qui eux contrairement aux tests unitaires les fonctionnalités de bout en bout. c'est-à-dire qu'ils toutes les couches de l'application (routing, modèle, action, controlleurs, template).
+  \paragraph{}
+ Avec Symfony, il est assez facile de créer des tests puisqu'il intègre la bibliothèque PHPUnit (@TODO explication PHPunit) qui fournis un framework de test complet, de plus pour les tests fonctionnels Symfony propose une class WebTestCase qui permet d'initier le noyau de Symfont, elle fournis notamment un objet \verb?client? qui permet d'effectuer des requêtes HTTP sur son application et un crawler qui permet de vérifier si le résultat de la requêtes est correct .
+  \paragraph{}
+ Avec ces deux types de tests toutes les fonctionnalités d'une application ne sont pas encore couverte, il reste encore l'IHM (Interface Homme Machine) qui est a mon avis une des parties les plus dur a tester puisqu'elle peut intégrer notamment du JavaScript, ce qui rend les tests côté serveur que nous avons vue précédemment inutile. 
+ 
 Test unitraite, Test fonctionel, (Mise en place de test  pour tous les codes metiers) 
 Behat (mise en place de test behat) 
 \subsection{Qualité fonctionnel}
