@@ -44,15 +44,25 @@ Concernant, la revue de sprint (validation des taches du sprint) celle-ci n'est 
  \begin{itemize}
  \item[]
  \item \textbf{Backlog} : le backlog qui contient les différentes tâches a effectué pour le projet, le tâches du backlog sont organisées en quatre colonnes (Nice to have, Good, Great, Must have) selon la priorité de la tâche.
+ \item[]
  \item \textbf{Support} : Les demandes effectué par les différentes équipes d'intégrateur d'Open Orchestra au sein d'Interakting.
+\item[]
  \item \textbf{Proposition} : Les différentes propositions d'amélioration ou de re- factorisation du code faites par les membres de l'équipe.
+\item[]
  \item \textbf{Bugs} : Les différents bug rencontrés durant le développement
+\item[]
  \item \textbf{Todo} : Les taches a effectuer durant le sprint en cours.
+\item[]
  \item \textbf{Doing} : Les taches actuellement en développement.
+\item[]
  \item \textbf{Blocked} : Les taches bloqué pour différentes raison (manque de précision de la tache, bug empêchant la réalisation de la taches)
+\item[]
  \item \textbf{ToDeploy} : Taches réalisés qui sont prêtes a être déployé sur le serveur d'intégration.
+\item[]
  \item \textbf{ToValidate} : Taches du sprint en attente de validation par le product owner.
+\item[]
  \item \textbf{Failed} : Taches du sprint e non validé par le product owner
+\item[]
  \item \textbf{Done} : Taches du sprint validé par le product owner
  \item[]
  \end{itemize}
@@ -60,25 +70,28 @@ Les colonnes \verb?ToDeploy?, \verb?Done? sont unique a un sprint, il y a donc u
 \paragraph{}
 Par exemple, une tâches suit un processus, présenté par le schéma, bien particulier entre l'intrégration de la tache dans la sprint et ca validation par le product ownver. Ce processus permet de suivre facilement l'avancement ou encore les différents problèmes rencontrés sur les différentes tâches par tous les membres de l'équipe.
 \section{Intégration continue}
-Pour le dévellopement d'Open Orchestra les principes de l'intégration continue sont utilisés. 
+Pour le développement d'Open Orchestra les principes de l'intégration continue sont utilisés. 
+\newline
 \begin{quotation}
 L'intégration continue est un ensemble de pratiques utilisées en génie logiciel consistant à vérifier à chaque modification de code source que le résultat des modifications ne produit pas de régression dans l'application développée.
 \end{quotation}
+@TODO source wikipedia
+
 L'utilisation de ces pratiques apporte de nombreux avantages, tous d'abord comme il est indiqué dans la citation cela permet de minimiser les régréssions mais aussi d'avoir a tous moment un produit (logiciel, site, etc) utilisable.
 \paragraph{}
-La mise en place de cette technique nécéssite différentes pré-requis : 
+La mise en place de cette technique nécessite différentes pré-requis : 
 \begin{itemize}
 \item[]
-\item Dépot unique de code source versionné
+\item Dépôt unique de code source versionné
 \item Automatisation des tests
 \item Un environnement similaire a celui de production
-\item Automatiser le deploiement
+\item Automatiser le déploiement
 \end{itemize}
 
-\subsection{git}
-Dans le cadre d'Open Orchestra, le code source est versionné avec git\footnode{Git est un lgociel de versionning décentralisé, c'est-à-dire qu'il n'existe pas un dépôt unique mais un dépot local pour chaque développeurs.} et utilise GitHub qui est un service web permettant d'heberger un dépôt git. Comme je l'expliquais lors des présentations des caractèristiques d'Open Orchestra, ce dernier est découpé en plusieurs bundles et donc chaque bundles posséde son propre dépôt sur GitHub.
+\subsection{Git}
+Dans le cadre d'Open Orchestra, le code source est versionné avec git\footnote{Git est un logiciel de versionning décentralisé, c'est-à-dire qu'il n'existe pas un dépôt unique mais un dépôt local pour chaque développeurs.} et utilise GitHub qui est un service web permettant d'héberger un dépôt git. Comme je l'expliquais lors des présentations des caractéristiques d'Open Orchestra, ce dernier est découpé en plusieurs bundles et donc chaque bundles possède son propre dépôt sur GitHub.
 \paragraph{}
-Open orchestra étant toujours en version béta, il n'y a pas de realease a proprement parlé. Ainsi le worklow de dévellopement sur github est simplifié car il n'y a qu'une seule branche stable, la branche maste. Les autres branches sont des branches temporaires d'ajout de fonctionnalités ou de correction de bugs. Ce type de workflow est appellé \verb?GitHub flow? et est représenté par le schéma.
+Open orchestra étant toujours en version bêta, il n'y a pas de realease a proprement parlé. Ainsi le worklow de développement sur github est simplifié car il n'y a qu'une seule branche stable, la branche master. Les autres branches sont des branches temporaires d'ajout de fonctionnalités ou de correction de bugs. Ce type de workflow est appelé \verb?GitHub flow? et est représenté par le schéma @TODO schéma git.
 \paragraph{}
 Ainsi avec ce type de workflow, la modification du code source que ce soit pour corriger un bug ou ajouter une fonctionnalités s'effectue toujours de la même manière : 
 \begin{enumerate}
@@ -89,19 +102,52 @@ Ainsi avec ce type de workflow, la modification du code source que ce soit pour 
 \item Pousser sa branche sur GitHub (origin)
 \item Vérifier que les tests fonctionnne, je reviendrais plus en détail sur ce point par la suite
 \item Ouvrir une pull-request, sur GitHub une pull-request consiste à faire une proposition de modification, à partir de cette pull-request les différents membres peuvent commenter, valider ou non la modification.
-\end{itemize}
+\end{enumerate}
 
 Une fois la pull-request validé, elle peut être mergé avec master, c'est-à-dire inclure la modification dans la branche master.
 \paragraph{}
-Lorsqu'une branche est poussé sur l'un des dépôts GitHub du projet, les tests sont automatiquement lancé. Pour cela, les différents dépôts du projet intégre un outil \verb?Travis CI?. Travais CI 
+@TODO  GITHUB tag
+\subsection{Travis CI}
+Lorsqu'une branche est poussé sur l'un des dépôts GitHub du projet, les tests sont automatiquement lancé. Pour cela, les différents dépôts du projet intégre un outil \verb?Travis CI?. Travais CI est un service qui est liée a GitHub, il permet de lancer à déclencher un certains nombre de tâches lors d'événement sur le dépôt. Dans le cas d'Open Orchestra Travis CI permet de lancer les tests unitaires après chaque \verb?push? sur un dépôt. Un des avantages de travis est qu'il se configure très facilement grâce un fichier yaml @TODO footnote yaml.
+\paragraph{}
+Par exemple le fichier de configuration travis d'un des dépôts d'Open Orchestra 
+\begin{verbatim}
+    language: php
 
-Pour eviter au maximun les régréssion utilsiation de travis description plus tard)
-Plate forme d'integration (la ou valide le PO), un déploiement plusieurs fois par jour sur l'environnement prod) utililisation capistrano ( présentation de l'outil) 
-Deploiement (capistrano)
+    php:
+          - 5.4
+
+    install:
+          - composer install --prefer-dist --no-progress
+ 
+    script: ./bin/phpunit
+\end{verbatim}
+
+Indique que le langage utilisé est php et que les tests doivent être exécuté avec la version 5.4 de php et enfin avant d'exécuter \verb?phpunit? pour lancer les test il est demandé a travis de faire un \verb?composer install? pour récupérer les dépendances du projet.  Ensuite à partir de ce fichier de configuration Travis CI est capable de créer l'environnement pour effectuer les tests, il est bien sûr possible d'aller plus loin dans  personnalisation de l'environnement en allant cherchant d'autre dépendances avec \verb?apt-get install? par exemple ou encore de demander a être notifié par email si les tests ne passe pas.
+@TODO Schéma travis
+\subsection{Déploiement}
+Le déploiement sur un serveur de production n'est pas toujours une tâche facile(uploader le code, mettre à jour les dépendances, lancer les migrations de la base de données, vider le cache, etc)  or pour permettre une intégration continue il est nécessaire de déployer régulièrement son application, il semble donc nécessaire d'automatiser cette taches pour cela il existe de nombreux outils. 
+\paragraph{}
+En ce qui concerne Open Orchestra nous utilisons \verb?Capistrano?. \verb?Capistrano? est un outil écrit en Ruby qui permet d'exécuter des scripts sur un ou plusieurs serveur. Il est principalement utilisé pour faire du déploiement mais il permet aussi de créer ces propres par exemple pour Open Orchestra nous l'utilisons aussi pour lancer des tests de charge, avec Jmeter, directement sur le serveur d'intégration.
+\paragraph{}
+Un autre avantage \verb?Capistrano? est qu'il permet de revenir facilement sur une version précédente de votre application grâce a une architecture de dossier que met en place \verb?Capistrano? dans le dossier de votre application sur serveur : 
+\begin{verbatim}
+/app/
+       releases/ Contient un dossier pour chaque déploiement estampillé
+       current lien symbolique pointant vers un dossier de release spécifique
+       shared/ Contient les données partagées entre chaque déploiement
+\end{verbatim}
+Ainsi, si un déploiement provoque des erreurs, il suffit de faire pointé le lient symbolique \verb?current? vers une autre version.
+
+@TODO Schéma resumé de capistrano
+
 \section{Qualité}
+\subsection{Qualité du code}
 PSR2 (qu'est ce que c'est, présentation)
 code climate (outil qui vérifie la qualité du code et fournis une note) 
-SensioInsignt (Outil de qualite d'application Symfony)
-Travis, (Détail a quoi ça sert, comment cela fonctionne (hook github lancement des test) 
+SensioInsignt (Outil de qualite d'application Symfony) 
+\subsection{Test}
 Test unitraite, Test fonctionel, (Mise en place de test  pour tous les codes metiers) 
 Behat (mise en place de test behat) 
+\subsection{Qualité fonctionnel}
+Fonctionnel

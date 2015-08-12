@@ -20,4 +20,10 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{M\351thodes agiles}{section.3.1}% 20
 \BOOKMARK [2][-]{subsection.3.1.2}{Scrum avec Open Orchestra}{section.3.1}% 21
 \BOOKMARK [1][-]{section.3.2}{Int\351gration continue}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.3}{Qualit\351}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{Git}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.2}{Travis CI}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.3}{D\351ploiement}{section.3.2}% 25
+\BOOKMARK [1][-]{section.3.3}{Qualit\351}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{Qualit\351 du code}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.2}{Test}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.3}{Qualit\351 fonctionnel}{section.3.3}% 29
