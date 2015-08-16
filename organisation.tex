@@ -1,5 +1,15 @@
 \chapter{Organisation du développement}
-Introduction, pas eu de tâche particulière intégration au sein de l'équipe avec diff tâches (ajout fonctionnalités, correction bug, Documentation en aglais, refacto, optimisation, formation
+Durant la période du stage, j'ai réalisé de nombreuses tâches sur le projet de différents types : 
+\begin{itemize}
+\item[]
+\item Ajout de fonctionnalités aux projets
+\item Correction de bug
+\item Documentation du projet (en anglais)
+\item Re factorisation et Optimisation du code
+\item[]
+\end{itemize}
+
+Je ne vais pas vous énumérer toutes les tâches qui porte en général sur un point précis du projet,  cela n'apporterait donc aucune valeur à ce rapport. Toutefois, je vais vous présenter l'organisation générale du développement, les techniques, les concepts, ou encore les outils utilisés.
 
 \section{Gestion de projet agile}
 \subsection{Méthodes agiles}
@@ -7,29 +17,29 @@ Introduction, pas eu de tâche particulière intégration au sein de l'équipe a
 Le projet a été mené selon une approche agile. La gestion de projet agile repose sur un développement itératif qui consiste à découper un projet en plusieurs itérations appelé sprint. Les méthodes agiles définis plusieurs valeurs fondamentales : 
 \begin{itemize}
 \item La communication au sein de l'équipe
-\item La collaboration avec le client, celui-ci doit être impliqué tous au long du développement.
-\item L'adaptation au changement, c'est-à-dire que le planification initiale doit être flexible pour permettre l'évolution de la demande. 
+\item La collaboration avec le client, celui-ci doit être impliqué tout au long du développement.
+\item L'adaptation au changement, c'est-à-dire que la planification initiale doit être flexible pour permettre l'évolution de la demande. 
 \end{itemize}
 Il existe différentes type de méthode agile (Scrum, XP, RAD...) qui possèdent leurs propres caractéristiques.
 \paragraph{}
 Pour le développement d'Open Orchestra, c'est la méthode Scrum qui est utilisé. Scrum définis trois rôles au sein d'une équipe : 
 \begin{itemize}
 \item  Le \og Product Owner (PO) \fg{} qui porte la vision du produit
-\item Le \og Scrum Master \fg{} est le responsable de la mise en œuvre de la méthode, il doit s'assurer que cette dernière est correctement appliqué
-\item L'équipe de développement qui est chargé de transformer les besoins exprimés par le Product Owner. 
+\item Le \og Scrum Master \fg{} est le responsable de la mise en œuvre de la méthode, il doit s'assurer que cette dernière est correctement appliquée
+\item L'équipe de développement qui est chargé de transformer les besoins exprimés par le Product Owner
 \end{itemize}
 \paragraph{}
 La réalisation d'un projet utilisant la méthode est rythmée par différents évènements : 
 \paragraph{}
-Tous d'abord, le sprint qui est représente une période de courte durée, de une à quatre semaines, durant laquelle l'équipe effectue un nombre de tâches définis à l'avance.
+Tous d'abord, le sprint qui est représente une période de courte durée, de une à quatre semaines, durant laquelle l'équipe effectue un nombre de tâches définies à l'avance.
  \paragraph{}
- La réunion de planification où l'équipe répond à deux questions, \og Quoi ? \fg{} c'est-à-dire les tâches du backlog\footnote{Le backlog est un ensemble de fonctionnalités ou de tâches nécessaire pour la réalisation satisfaisante d'un projet} qu'elle réalisera au prochain sprint et \og Comment ? \fg{} c'est a ce moment que l'équipe estime les tâches choisis au \og Quoi \fg{} 
+ La réunion de planification où l'équipe répond à deux questions, \og Quoi ? \fg{} c'est-à-dire les tâches du backlog\footnote{Le backlog est un ensemble de fonctionnalités ou de tâches nécessaires pour la réalisation satisfaisante d'un projet} qu'elle réalisera au prochain sprint et \og Comment ? \fg{} c'est à ce moment que l'équipe estime les tâches choisies au \og Quoi \fg{} 
 
  \paragraph{}
-Le \og daily scrum \fg{} qui est une réunion réalisé quotidiennement. Durant cette réunion chaque membre de l'équipe indique les tâches qu'il a réalisé depuis le dernier daily et celles qu'il va effectuer jusqu'au prochaine daily et pour finir les difficultés qu'il a ou pense rencontrer.
+Le \og daily scrum \fg{} qui est une réunion réalisée quotidiennement. Durant cette réunion chaque membre de l'équipe indique les tâches qu'il a réalisées depuis le dernier daily et celles qu'il va effectuer jusqu'au prochain daily et pour finir les difficultés qu'il a ou pense rencontrer.
 Cette réunion permet à tous les membres de connaître les tâches de chacun afin de s'entraider et d'anticiper plus facilement les obstacles.
  \paragraph{}
-Pour finir à la fin du sprint, les membres de l'équipe se réunisse pour la revue de sprint durant laquelle les différentes tâches réalisés durant le sprint sont présentés et validés. Puis pour la rétrospective qui permet de mettre en évidence les points positif et les actions a mettre en place pour améliorer le prochain sprint.
+Pour finir à la fin du sprint, les membres de l'équipe se réunisse pour la revue de sprint durant laquelle les différentes tâches réalisés durant le sprint sont présentés et validés. Puis pour la rétrospective qui permet de mettre en évidence les points positifs et les actions a mettre en place pour améliorer le prochain sprint.
 
 \begin{figure}[H]
   \begin{center}
@@ -41,42 +51,42 @@ Pour finir à la fin du sprint, les membres de l'équipe se réunisse pour la re
 \end{figure}
 
 \subsection{Scrum avec Open Orchestra}
-Au sein du projet Open Orchestra, la méthode Scrum est appliqué.. Ainsi des sprint de une semaine avec un daily scrum tous les jours a midi.
-De plus, tous les mercredis ou mardis selon les disponibilités une \og cérémonie \fg{} qui comprend la réunion de planification et la rétrospective.
-Concernant, la revue de sprint (validation des taches du sprint) celle-ci n'est pas faite durant une réunion définis mais tout au long du sprint par le product ownver.
+Au sein du projet Open Orchestra, la méthode Scrum est appliqué. Ainsi des sprint de une semaine avec un daily scrum tous les jours à midi.
+De plus, tous les mercredis ou mardi selon les disponibilités une \og cérémonie \fg{} qui comprend la réunion de planification et la rétrospective.
+Concernant, la revue de sprint (validation des tâches du sprint) celle-ci n'est pas faite durant une réunion défini mais tout au long du sprint par le product ownver.
  \paragraph{}
  Pour faciliter la mise en place de la méthode Scrum, l'équipe utilise différent outils.
- Tous d'abord Skype et Slack\footnote{Slack est une plateforme de communication réalisé en 2014 qui permet d'intégrer facilement différents outils de service en ligne tel que github, trello, dropbox, google drive, ...)} pour la communication.
+ Tous d'abord Skype et Slack\footnote{Slack est une plateforme de communication réalisée en 2014 qui permet d'intégrer facilement différents outils de service en ligne telle que github, trello, dropbox, google drive, ...)} pour la communication.
   \paragraph{}
- Et enfin Trello pour organiser les tâches, en effet l'équipe possédé un \verb?board? avec différentes colonnes pour organiser les tâches : 
+ Et enfin Trello pour organiser les tâches, en effet l'équipe posséde un \verb?board? avec différentes colonnes pour organiser les tâches : 
  \begin{itemize}
  \item[]
- \item \textbf{Backlog} : le backlog qui contient les différentes tâches a effectué pour le projet, le tâches du backlog sont organisées en quatre colonnes (Nice to have, Good, Great, Must have) selon la priorité de la tâche.
+ \item \textbf{Backlog} : le backlog qui contient les différentes tâches a effectuer pour le projet, les tâches du backlog sont organisées en quatre colonnes (Nice to have, Good, Great, Must have) selon la priorité de la tâche.
  \item[]
- \item \textbf{Support} : Les demandes effectué par les différentes équipes d'intégrateur d'Open Orchestra au sein d'Interakting.
+ \item \textbf{Support} : Les demandes effectuées par les différentes équipes d'intégrateur d'Open Orchestra au sein d'Interakting.
 \item[]
- \item \textbf{Proposition} : Les différentes propositions d'amélioration ou de re- factorisation du code faites par les membres de l'équipe.
+ \item \textbf{Proposition} : Les différentes propositions d'amélioration ou de re-factorisation du code faite par les membres de l'équipe.
 \item[]
- \item \textbf{Bugs} : Les différents bug rencontrés durant le développement
+ \item \textbf{Bugs} : Les différents bugs rencontrés durant le développement
 \item[]
- \item \textbf{Todo} : Les taches a effectuer durant le sprint en cours.
+ \item \textbf{Todo} : Les tâches a effectuer durant le sprint en cours.
 \item[]
- \item \textbf{Doing} : Les taches actuellement en développement.
+ \item \textbf{Doing} : Les tâches actuellement en développement.
 \item[]
- \item \textbf{Blocked} : Les taches bloqué pour différentes raison (manque de précision de la tache, bug empêchant la réalisation de la taches)
+ \item \textbf{Blocked} : Les tâches bloquées pour différentes raison (manque de précision de la tâche, bug empêchant la réalisation de la tâche)
 \item[]
- \item \textbf{ToDeploy} : Taches réalisés qui sont prêtes a être déployé sur le serveur d'intégration.
+ \item \textbf{ToDeploy} : Tâches réalisées qui sont prêtes à être déployé sur le serveur d'intégration.
 \item[]
- \item \textbf{ToValidate} : Taches du sprint en attente de validation par le product owner.
+ \item \textbf{ToValidate} : Tâches du sprint en attente de validation par le product owner.
 \item[]
- \item \textbf{Failed} : Taches du sprint e non validé par le product owner
+ \item \textbf{Failed} : Tâches du sprint non validé par le product owner
 \item[]
- \item \textbf{Done} : Taches du sprint validé par le product owner
+ \item \textbf{Done} : Tâches du sprint validé par le product owner
  \item[]
  \end{itemize}
-Les colonnes \verb?ToDeploy?, \verb?Done? sont unique a un sprint, il y a donc une colonne  différent\verb?ToDeploy?, \verb?Done? pour chaque sprint.
+Les colonnes \verb?ToDeploy?, \verb?Done? sont uniques a un sprint, il y a donc une colonne \verb?ToDeploy?, \verb?Done? différente pour chaque sprint.
 \paragraph{}
-Par exemple, une tâches suit un processus, présenté par le schéma, bien particulier entre l'intrégration de la tache dans la sprint et ca validation par le product ownver. Ce processus permet de suivre facilement l'avancement ou encore les différents problèmes rencontrés sur les différentes tâches par tous les membres de l'équipe.
+Par exemple, une tâche suit un processus, présenté par le schéma, (@TODO schema) bien particulier entre l'intégration de la tâche dans la sprint et sa validation par le product ownver. Ce processus permet de suivre facilement l'avancement ou encore les différents problèmes rencontrés sur les différentes tâches par tous les membres de l'équipe.
 \section{Intégration continue}
 Pour le développement d'Open Orchestra les principes de l'intégration continue sont utilisés. 
 \newline
@@ -192,9 +202,12 @@ De plus, ils sont en générale gage de qualité
   \paragraph{}
  Avec Symfony, il est assez facile de créer des tests puisqu'il intègre la bibliothèque PHPUnit qui fournis un framework de test complet, de plus pour les tests fonctionnels Symfony propose une class WebTestCase qui permet d'initier le noyau de Symfont, elle fournis notamment un objet \verb?client? qui permet d'effectuer des requêtes HTTP sur son application et un crawler qui permet de vérifier si le résultat de la requêtes est correct .
   \paragraph{}
- Avec ces deux types de tests toutes les fonctionnalités d'une application ne sont pas encore couverte, il reste encore l'IHM (Interface Homme Machine) qui est a mon avis une des parties les plus dur a tester puisqu'elle peut intégrer notamment du JavaScript, ce qui rend les tests côté serveur que nous avons vue précédemment inutile. 
- 
-Test unitraite, Test fonctionel, (Mise en place de test  pour tous les codes metiers) 
-Behat (mise en place de test behat) 
+  En plus des différents test au niveau du code serveur, Open Orchestra possède aussi des tests de charges réalisé avec Jmeter. Jmeter un logiciel qui permet de tester les performances d'une application en simulant des utilisateurs. Concrètement pour effectuer un test, il suffit décrire un scénario fonctionnel c'est-à-dire un enchainement d'action (visiter une url, remplir un formulaire, etc) que Jmeter devra effectuer lors du test et un nombre d'utilisateur qui réaliseront ce scénario.
+  
+  \paragraph{}
+  Lorsque que Jmeter effectue un test, il fournis un tableau de résultat avec différentes données tel que le temps de réponse d'une url, le pourcentage d'erreur, etc) ainsi cela permet de voir comme réagisse les différentes fonctionnalités de son application avec un nombre important d'utilisateur.
 \subsection{Qualité fonctionnel}
-Fonctionnel
+Une point important d'une application est son ergonomie, concernant Open Orchestra  
+a fait appelle a des consultant fonctionnels qui ont émit différentes propositions afin d'améliorer l'ergonomie.  Les différentes propositions sont recueillis au sein d'un board Trello prévue a cette effet avec différentes colonnes  (Propositions, Propositions validés par un experts fonctionnels, Propositions acceptées par Open Orchestra). 
+  \paragraph{}
+  Ainsi lorsqu'une proposition est validé par un expert fonctionnels, nous en parlons en cérémonie pour savoir si elle doit être ou non intégré a la backlog du projet. 
