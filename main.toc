@@ -59,32 +59,32 @@
 \contentsline {paragraph}{}{15}{section*.45}
 \contentsline {paragraph}{}{15}{section*.46}
 \contentsline {paragraph}{}{15}{section*.47}
-\contentsline {section}{\numberline {3.2}Int\IeC {\'e}gration continue}{15}{section.3.2}
-\contentsline {paragraph}{}{16}{section*.48}
-\contentsline {subsection}{\numberline {3.2.1}Git}{16}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.2}Int\IeC {\'e}gration continue}{16}{section.3.2}
 \contentsline {paragraph}{}{16}{section*.49}
-\contentsline {paragraph}{}{17}{section*.51}
+\contentsline {subsection}{\numberline {3.2.1}Git}{16}{subsection.3.2.1}
+\contentsline {paragraph}{}{17}{section*.50}
 \contentsline {paragraph}{}{17}{section*.52}
-\contentsline {subsection}{\numberline {3.2.2}Travis CI}{18}{subsection.3.2.2}
 \contentsline {paragraph}{}{18}{section*.53}
-\contentsline {subsection}{\numberline {3.2.3}D\IeC {\'e}ploiement}{18}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.2}Travis CI}{18}{subsection.3.2.2}
 \contentsline {paragraph}{}{18}{section*.54}
+\contentsline {subsection}{\numberline {3.2.3}D\IeC {\'e}ploiement}{18}{subsection.3.2.3}
 \contentsline {paragraph}{}{19}{section*.55}
+\contentsline {paragraph}{}{19}{section*.56}
 \contentsline {section}{\numberline {3.3}Qualit\IeC {\'e}}{19}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Qualit\IeC {\'e} du code}{19}{subsection.3.3.1}
-\contentsline {paragraph}{}{19}{section*.56}
-\contentsline {paragraph}{}{19}{section*.57}
-\contentsline {paragraph}{}{19}{section*.58}
+\contentsline {paragraph}{}{20}{section*.57}
+\contentsline {paragraph}{}{20}{section*.58}
 \contentsline {paragraph}{}{20}{section*.59}
-\contentsline {subsection}{\numberline {3.3.2}Test}{20}{subsection.3.3.2}
 \contentsline {paragraph}{}{20}{section*.60}
+\contentsline {subsection}{\numberline {3.3.2}Test}{20}{subsection.3.3.2}
 \contentsline {paragraph}{}{20}{section*.61}
 \contentsline {paragraph}{}{20}{section*.62}
 \contentsline {paragraph}{}{20}{section*.63}
-\contentsline {subsection}{\numberline {3.3.3}Qualit\IeC {\'e} fonctionnel}{20}{subsection.3.3.3}
-\contentsline {paragraph}{}{20}{section*.64}
-\contentsline {chapter}{Bilan}{21}{chapter*.65}
-\contentsline {paragraph}{}{21}{section*.66}
-\contentsline {paragraph}{}{21}{section*.67}
-\contentsline {paragraph}{}{21}{section*.68}
-\contentsline {paragraph}{}{21}{section*.69}
+\contentsline {paragraph}{}{21}{section*.64}
+\contentsline {subsection}{\numberline {3.3.3}Qualit\IeC {\'e} fonctionnel}{21}{subsection.3.3.3}
+\contentsline {paragraph}{}{21}{section*.65}
+\contentsline {chapter}{Bilan}{22}{chapter*.66}
+\contentsline {paragraph}{}{22}{section*.67}
+\contentsline {paragraph}{}{22}{section*.68}
+\contentsline {paragraph}{}{22}{section*.69}
+\contentsline {paragraph}{}{22}{section*.70}
