@@ -5,20 +5,20 @@ Dans ce chapitre, je ne vais pas revenir sur les concepts de base et tous les co
 \section{Bundles}
 Un bundle Symfony est un repertoire qui contient un ensemble de fichiers structurés (contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une fonctionnalité réutilisable dans n'importe quelle application Symfony2. Sous Symfony2 presque tout est découpé en bundle même le kernel du framework.
 \paragraph{}
-Les différents classes et fichiers d'un bundle sont organisé selon l'architecture suivante : 
+Les différentes classes et fichiers d'un bundle sont organisé selon l'architecture suivante : 
 
 \begin{verbatim}
-Bundle/
-      Command/  
-      Controller/
-      DependencyInjection/
-      EventListener/
-      Tests/
-      Ressources/
-                config/
-                public/
-                translations/
-                views/
+      Bundle/
+           Command/  
+           Controller/
+           DependencyInjection/
+           EventListener/
+          Tests/
+          Ressources/
+                    config/
+                    public/
+                    translations/
+                    views/
 \end{verbatim}
 \begin{itemize}
 \item[]
@@ -33,7 +33,28 @@ Bundle/
 \end{itemize}
 \paragraph{}
 Pour permettre un plus grande flexibilité un bundle peut définir sa propre configuration (fichiers du répertoire config) qui peut être surcharger par la configuration générale de l'application qui utilise le bundle.
-\section{Containeur de service}
-http://symfony.com/fr/doc/current/book/service_container.html
-\section{Injection de dépendances}
-https://symfony.com/doc/current/components/dependency_injection/compilation.html
+
+TODO Les passes de compilation
+\section{Conteneur de service}
+
+\subsection{Service}
+Un service est simplement un objet qui réalise une fonction spécifique comme par exemple envoyer un mail. L'avantage d'avoir de nombreux services pour gérer les différentes fonctionnalités de son application est de permettre la séparation de son code et donc une plus grande flexibilité.
+@TODO exemple de fichier yaml
+\paragraph{}
+Ce type d'architecture est appelé \og architecture orienté service \fg{} et n'est pas spécifique à Symfony ou même à PHP.
+\subsection{Conteneur}
+Les différents services sont géré par le conteneur de service. Le conteneur de service est un objet qui gère tous les services, récupération d'un service, instanciation d'un service, etc.
+\paragraph{}
+Par exemple, supposons que nous avons deux services (service1, service2) et que le service 1 a besoin du service2. Lorsque l'on fait appelle au service1 le schéma~\ref{conteneur} décrit le fonctionnement du conteneur de service pour récupérer le service.
+		\begin{figure}[H]
+        \begin{center}
+          \includegraphics[scale=0.8]{images/conteneur_service}
+        \end{center}
+        \caption{Fonctionnement du conteneur de serveur lors de la demande d'un service}
+        \label{conteneur}
+      \end{figure}
+
+\paragraph{}
+Les différents services sont partagés au sein d'un conteneur, c'est-à-dire qu'un service est instancié une seul et unique fois à la première demande de celui-ci. Ce qui permet a  différents objet de manipuler la même instance d'un service tout au long de la requête.
+%https://www.elao.com/fr/blog/symfony2-illustration-de-la-mise-en-oeuvre-de-linjection-de-dependance
+TODO Injection de dépendances

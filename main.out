@@ -15,17 +15,23 @@
 \BOOKMARK [1][-]{section.2.4}{Caract\351ristiques}{chapter.2}% 15
 \BOOKMARK [2][-]{subsection.2.4.1}{Performance}{section.2.4}% 16
 \BOOKMARK [2][-]{subsection.2.4.2}{Modularit\351s}{section.2.4}% 17
-\BOOKMARK [-1][-]{part.3}{III Organisation du d\351veloppement}{}% 18
-\BOOKMARK [0][-]{chapter.3}{Organisation du d\351veloppement}{part.3}% 19
-\BOOKMARK [1][-]{section.3.1}{Gestion de projet agile}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.1.1}{M\351thodes agiles}{section.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.1.2}{Scrum avec Open Orchestra}{section.3.1}% 22
-\BOOKMARK [1][-]{section.3.2}{Int\351gration continue}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{Git}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.2}{Travis CI}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.3}{D\351ploiement}{section.3.2}% 26
-\BOOKMARK [1][-]{section.3.3}{Qualit\351}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.1}{Qualit\351 du code}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.2}{Test}{section.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.3}{Qualit\351 fonctionnel}{section.3.3}% 30
-\BOOKMARK [0][-]{chapter*.66}{Bilan}{part.3}% 31
+\BOOKMARK [-1][-]{part.3}{III Symfony2}{}% 18
+\BOOKMARK [0][-]{chapter.3}{Concepts cl\351}{part.3}% 19
+\BOOKMARK [1][-]{section.3.1}{Bundles}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Conteneur de service}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Service}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Conteneur}{section.3.2}% 23
+\BOOKMARK [-1][-]{part.4}{IV Organisation du d\351veloppement}{}% 24
+\BOOKMARK [0][-]{chapter.4}{Organisation du d\351veloppement}{part.4}% 25
+\BOOKMARK [1][-]{section.4.1}{Gestion de projet agile}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.1.1}{M\351thodes agiles}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.2}{Scrum avec Open Orchestra}{section.4.1}% 28
+\BOOKMARK [1][-]{section.4.2}{Int\351gration continue}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.2.1}{Git}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.2}{Travis CI}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.3}{D\351ploiement}{section.4.2}% 32
+\BOOKMARK [1][-]{section.4.3}{Qualit\351}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.3.1}{Qualit\351 du code}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.2}{Test}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.3}{Qualit\351 fonctionnel}{section.4.3}% 36
+\BOOKMARK [0][-]{chapter*.73}{Bilan}{part.4}% 37
