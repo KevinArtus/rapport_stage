@@ -1,8 +1,38 @@
-\chapter{Concepts clé }
-Dans ce chapitre, je ne vais pas revenir sur tous les compsants de Symfony 2 (controlleur, routing, etc) mais je vais vous présenter quelque concepts clé utilisé par Symfony 2 qui permettent justement le fait couplage d'Open Orchestra.
+\chapter{Concepts clé}
+Symfony2 est un framework MVC PHP open source développé par l'entreprise SensioLabs et est l'un des framework les plus utilisé dans le monde du web. Il dispose d'une très grande communauté et d'un large panel de modules (\og{}Bundles\fg{}) développés par cette communauté.
+\paragraph{}
+Dans ce chapitre, je ne vais pas revenir sur les concepts de base et tous les compsants de Symfony 2 (controlleur, routing, etc) mais je vais vous présenter quelque concepts clé utilisé par Symfony 2 qui permettent justement le fait couplage d'Open Orchestra.
 \section{Bundles}
-http://symfony.com/fr/doc/current/book/page_creation.html#page-creation-bundles
-http://symfony.com/fr/doc/current/quick_tour/the_architecture.html#using-vendors
+Un bundle Symfony est un repertoire qui contient un ensemble de fichiers structurés (contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une fonctionnalité réutilisable dans n'importe quelle application Symfony2. Sous Symfony2 presque tout est découpé en bundle même le kernel du framework.
+\paragraph{}
+Les différents classes et fichiers d'un bundle sont organisé selon l'architecture suivante : 
+
+\begin{verbatim}
+Bundle/
+      Command/  
+      Controller/
+      DependencyInjection/
+      EventListener/
+      Tests/
+      Ressources/
+                config/
+                public/
+                translations/
+                views/
+\end{verbatim}
+\begin{itemize}
+\item[]
+\item \textbf{Command} Contient les commandes du bundles
+\item \textbf{Controller} Contient les contrôleurs du bundles
+\item \textbf{DependencyInjection} Contient les classes qui peuvent importer la configuration de servcies, ajouter des passes de compilation, je reviendrais plus en détail sur ce repertoire par la suite
+\item \textbf{EventListener} Les listeners d'évènements du bundle
+\item \textbf{Tests} Tests unitaires et fonctionnels du bundle
+\item \textbf{Resources/config/} Configuration du bundle (routage, déclarations de service, etc)
+\item \textbf{Resources/views/} Templates (vues) utilisé dans le bundle
+\item \textbf{Resources/public/} Ressources web (js, css, images, etc)
+\end{itemize}
+\paragraph{}
+Pour permettre un plus grande flexibilité un bundle peut définir sa propre configuration (fichiers du répertoire config) qui peut être surcharger par la configuration générale de l'application qui utilise le bundle.
 \section{Containeur de service}
 http://symfony.com/fr/doc/current/book/service_container.html
 \section{Injection de dépendances}
