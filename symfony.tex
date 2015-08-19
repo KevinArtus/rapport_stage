@@ -32,14 +32,37 @@ Les différentes classes et fichiers d'un bundle sont organisé selon l'architec
 \item \textbf{Resources/public/} Ressources web (js, css, images, etc)
 \end{itemize}
 \paragraph{}
-Pour permettre un plus grande flexibilité un bundle peut définir sa propre configuration (fichiers du répertoire config) qui peut être surcharger par la configuration générale de l'application qui utilise le bundle.
-
+Pour permettre une plus grande flexibilité un bundle peut définir sa propre configuration (fichiers du répertoire config) qui peut être surcharger par la configuration générale de l'application qui utilise le bundle.
+http://symfony.com/fr/doc/current/components/dependency_injection/workflow.html
 TODO Les passes de compilation
 \section{Conteneur de service}
 
 \subsection{Service}
+\paragraph{}
 Un service est simplement un objet qui réalise une fonction spécifique comme par exemple envoyer un mail. L'avantage d'avoir de nombreux services pour gérer les différentes fonctionnalités de son application est de permettre la séparation de son code et donc une plus grande flexibilité.
-@TODO exemple de fichier yaml
+\paragraph{}
+Avec Symfony2, pour créér un service il suffit de le déclarer dans un fichier de configuration (yaml, xml, php), en générale ce fichier est appellé \verb?services.yml?
+et de charger ce fichier lors du chargement du bundle (Extension @TODO parlé du chargement du bundle).
+Lorsque l'on déclare un service, il faut indiquer sa classe et eventuellement les differents arguments dont a bessoin le service.
+\paragraph{}
+Par exemple, le fichier de configuration yaml suivant déclare deux services, \verb?service2? et \verb?service2?.
+La classe \verb?Service1? a bessoin d'une instance de \verb?Service2? pour cela, on peut utiliser la syntaxe \verb?@service2? qui indique au conteneur de service de chercher un service appellé \verb?service2 et de transmettre une instance au constructeur de \verb?Service2?
+
+\begin{verbatim}
+
+  services:
+      service2:
+          class: "\MonBundle\Service2"
+      service1:
+          class: "\MonBundle\Service1"
+          arguments: ["@service2"]
+          tags:
+                - { name: tag }
+
+\end{verbatim}
+\paragraph{}
+Pour finir, lorsque l'on déclare un service, il peut être taggé comme le montre l'exemple ci-dessus avec le paramètre \verb?tags?.
+L'intérét d'avoir des services taggé et de pouvoir récupérer tous les services qui posséde un certains tag. c'est notamment utilisé par le pattern stratégie, que je vous ai présenté dans la section précédente, pour récupérer les differentes stratégie.
 \paragraph{}
 Ce type d'architecture est appelé \og architecture orienté service \fg{} et n'est pas spécifique à Symfony ou même à PHP.
 \subsection{Conteneur}
@@ -56,5 +79,3 @@ Par exemple, supposons que nous avons deux services (service1, service2) et que 
 
 \paragraph{}
 Les différents services sont partagés au sein d'un conteneur, c'est-à-dire qu'un service est instancié une seul et unique fois à la première demande de celui-ci. Ce qui permet a  différents objet de manipuler la même instance d'un service tout au long de la requête.
-%https://www.elao.com/fr/blog/symfony2-illustration-de-la-mise-en-oeuvre-de-linjection-de-dependance
-TODO Injection de dépendances
