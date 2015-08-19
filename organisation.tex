@@ -16,11 +16,14 @@ Je ne vais pas vous énumérer toutes les tâches qui porte en général sur un 
 \paragraph{}
 Le projet a été mené selon une approche agile. La gestion de projet agile repose sur un développement itératif qui consiste à découper un projet en plusieurs itérations appelé sprint. Les méthodes agiles définis plusieurs valeurs fondamentales : 
 \begin{itemize}
+         \item[]
 \item La communication au sein de l'équipe
 \item La collaboration avec le client, celui-ci doit être impliqué tout au long du développement.
 \item L'adaptation au changement, c'est-à-dire que la planification initiale doit être flexible pour permettre l'évolution de la demande. 
+         \item[]
 \end{itemize}
 Il existe différentes type de méthode agile (Scrum, XP, RAD...) qui possèdent leurs propres caractéristiques.
+
 \paragraph{}
 Pour le développement d'Open Orchestra, c'est la méthode Scrum qui est utilisé. Scrum définis trois rôles au sein d'une équipe : 
 \begin{itemize}
@@ -137,11 +140,15 @@ Ainsi avec ce type de workflow, la modification du code source que ce soit pour 
 \item Pousser sa branche sur GitHub (origin)
 \item Vérifier que les tests fonctionnnent, je reviendrais plus en détail sur ce point par la suite
 \item Ouvrir une pull-request, sur GitHub une pull-request consiste à faire une proposition de modification, à partir de cette pull-request les différents membres peuvent commenter, valider ou non la modification.
+         \item[]
 \end{enumerate}
 
 Une fois la pull-request validé, elle peut être mergé avec master, c'est-à-dire inclure la modification dans la branche master.
 \paragraph{}
-Comme je l'ai précisé en début de section pour le moment Open Orchestra ne posséde pas de branche realease. Toutefois, le projet Open Orchestra est déjà utilisé par des intégrateurs pour réaliser des sites à distanciation de différent clients, ils ne peuvent donc pas utiliser directement la branche master, ils leurs faut des points d'arrêts. Pour cela, sauf cas particulier (bug bloquant, besoins particulier) la branche master est \verb?taggé? toute les deux semaines environ ainsi cela permet à l'équipe d'Open Orchestra de continuer le développement  du projet et aux intégrateurs d'avoir une version fixe de la branche master qu'ils peuvent mettre à jour au moment le plus opportun pour eux.  Lorsque Open Orchestra ne sera plus en bêta cela changera la version 1 aura sa propre branche dans laquelle aucune nouveautés sera intégré or mis les corrections de bug.
+Comme je l'ai précisé en début de section pour le moment Open Orchestra ne posséde pas de branche realease. Toutefois, le projet Open Orchestra est déjà utilisé par des intégrateurs pour réaliser des sites à distanciation de différent clients, ils ne peuvent donc pas utiliser directement la branche master, ils leurs faut des points d'arrêts. 
+
+\paragraph{}
+Pour cela, sauf cas particulier (bug bloquant, besoins particulier) la branche master est \verb?taggé? toute les deux semaines environ ainsi cela permet à l'équipe d'Open Orchestra de continuer le développement  du projet et aux intégrateurs d'avoir une version fixe de la branche master qu'ils peuvent mettre à jour au moment le plus opportun pour eux.  Lorsque Open Orchestra ne sera plus en bêta cela changera la version 1 aura sa propre branche dans laquelle aucune nouveautés sera intégré or mis les corrections de bug.
 
 \subsection{Travis CI}
 Lorsqu'une branche est poussée sur l'un des dépôts GitHub du projet, les tests sont automatiquement lancés. Pour cela, les différents dépôts du projet intègrent l'outil \verb?Travis CI?. Travais CI est un service qui est lié a GitHub, il permet de déclencher un certain nombre de tâches lors d'événement sur le dépôt. Dans le cas d'Open Orchestra Travis CI permet de lancer les tests unitaires après chaque \verb?push? sur un dépôt. Un des avantages de travis est qu'il se configure très facilement grâce un fichier yaml.

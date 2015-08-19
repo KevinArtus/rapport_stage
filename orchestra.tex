@@ -1,4 +1,4 @@
-\chapter{Orchestra}
+\chapter{Open Orchestra}
 \section{Présentation}
         \paragraph{}
         Open Orchestra est un CMS (Content Management  System) open source en développement depuis un peu plus d'un an. Il est actuellement en version bêta, la sortie de la première version est prévu pour le mois de septembre.
@@ -63,6 +63,7 @@
          \item  Les \og node tranverse \fg{} qui contiennent les blocs transverses, c'est-à-dire les blocs qui sont communs à plusieurs pages comme le bloc \og menu \fg{} ou encore le bloc \og footer \fg{}.
           \item[]
          \item Le dernier type de node est celui qui permet de contribuer les pages d'erreurs (404, 503) d'un site.
+         \item[]
          \end{itemize}
          \paragraph{}
 		Le schéma~\ref{node} montre un exemple typique de page avec trois zones, le header qui contient un bloc menu, le footer un bloc footer et une zone principale découpée elle-même en deux zones avec un bloc de contact pour la zone de droite et un bloc de texte à gauche.
@@ -98,20 +99,30 @@
       \end{figure}
    
    \subsection{Modularités}
-   Comme je vous l'expliquais en introduction la principale particularité d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles \footnote{Sous Symfony2 un bundle est un ensemble de fichiers structurés (contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une ou des fonctionnalités qui dans l'idéale peuvent être réutilisées dans différents projets}
-   \paragraph{}
+   Comme je vous l'expliquais en introduction la principale particularité d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles ~\ref{bundle}
    \begin{itemize}
    \item \textbf{open-orchestra-base-bundle} : Classes communes au back-office et front-office
+            \item[]
    \item \textbf{open-orchestra-base-api-bundle} : Api d'Open Orchestra
+         \item[]   
    \item \textbf{open-orchestra-base-api-mongo-model-bundle} : Implémentation des models nécessaires à l'api pour \verb?MongoDB? 
+            \item[]
    \item \textbf{open-orchestra-cms-bundle} : Logique du back-office
+            \item[]
    \item \textbf{open-orchestra-front-bundle} : Logique du front-office
+            \item[]
    \item \textbf{open-orchestra-display-bundle} : Logique d'affichage des blocs en Front-office
+            \item[]
    \item \textbf{open-orchestra-media-bundle} : Médiathèque d'Open Orchestra
-   \item \textbf{open-orchestra-media-admin-bundle} : Administration de la médiathèque d'Open Orhcestra
+            \item[]
+   \item \textbf{open-orchestra-media-admin-bundle} : Administration de la médiathèque d'Open Orchestra
+            \item[]
    \item \textbf{open-orchestra-model-interface} : Interfaces des models utilisés par les autres bundles 
+            \item[]
    \item \textbf{open-orchestra-model-bundle} : Implémentation des models pour \verb?MongoDB? 
+            \item[]
    \item \textbf{open-orchestra-user-bundle} : Gestion des utilisateurs 
+            \item[]
    \item \textbf{open-orchestra-workflow-function-bundle} : Système de workflow pour le back-office 
    \end{itemize}
    \paragraph{}

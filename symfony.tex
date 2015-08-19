@@ -1,8 +1,9 @@
-\chapter{Concepts clé}
+\chapter{Concepts clés}
 Symfony2 est un framework MVC PHP open source développé par l'entreprise SensioLabs et est l'un des framework les plus utilisé dans le monde du web. Il dispose d'une très grande communauté et d'un large panel de modules (\og{}Bundles\fg{}) développés par cette communauté.
 \paragraph{}
 Dans ce chapitre, je ne vais pas revenir sur les concepts de base et tous les compsants de Symfony 2 (controlleur, routing, etc) mais je vais vous présenter quelque concepts clé utilisé par Symfony 2 qui permettent justement le fait couplage d'Open Orchestra.
 \section{Bundles}
+\label{bundle}
 Un bundle Symfony est un repertoire qui contient un ensemble de fichiers structurés (contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une fonctionnalité réutilisable dans n'importe quelle application Symfony2. Sous Symfony2 presque tout est découpé en bundle même le kernel du framework.
 \paragraph{}
 Les différentes classes et fichiers d'un bundle sont organisé selon l'architecture suivante : 
@@ -32,21 +33,20 @@ Les différentes classes et fichiers d'un bundle sont organisé selon l'architec
 \item \textbf{Resources/public/} Ressources web (js, css, images, etc)
 \end{itemize}
 \paragraph{}
-Pour permettre une plus grande flexibilité un bundle peut définir sa propre configuration (fichiers du répertoire config) qui peut être surcharger par la configuration générale de l'application qui utilise le bundle.
-http://symfony.com/fr/doc/current/components/dependency_injection/workflow.html
-TODO Les passes de compilation
+\label{configuration}
+Pour permettre une plus grande flexibilité un bundle peut définir sa propre configuration . En effet chaque bundle possède une classe \verb?Extension? qui se trouve dans le répertoire \verb?DependencyInjection?, cette classe permet de charger la configuration du bundle qui se trouve dans le répertoire \verb?config?, de plus elle permet de manipuler cette configuration comme par exemple l'étendre avec la configuration générale de l'application (\verb?app/config?) ou encore déclarer des services dynamiquement selon une configuration. 
 \section{Conteneur de service}
 
-\subsection{Service}
+\subsection{Services}
 \paragraph{}
 Un service est simplement un objet qui réalise une fonction spécifique comme par exemple envoyer un mail. L'avantage d'avoir de nombreux services pour gérer les différentes fonctionnalités de son application est de permettre la séparation de son code et donc une plus grande flexibilité.
 \paragraph{}
 Avec Symfony2, pour créér un service il suffit de le déclarer dans un fichier de configuration (yaml, xml, php), en générale ce fichier est appellé \verb?services.yml?
-et de charger ce fichier lors du chargement du bundle (Extension @TODO parlé du chargement du bundle).
-Lorsque l'on déclare un service, il faut indiquer sa classe et eventuellement les differents arguments dont a bessoin le service.
+et de charger ce fichier lors du chargement du bundle (~\ref{configuration}).
+Lorsque l'on déclare un service, il faut indiquer sa classe et éventuellement les différents arguments dont a besoins le service.
 \paragraph{}
 Par exemple, le fichier de configuration yaml suivant déclare deux services, \verb?service2? et \verb?service2?.
-La classe \verb?Service1? a bessoin d'une instance de \verb?Service2? pour cela, on peut utiliser la syntaxe \verb?@service2? qui indique au conteneur de service de chercher un service appellé \verb?service2 et de transmettre une instance au constructeur de \verb?Service2?
+La classe \verb?Service1? a besoins d'une instance de \verb?Service2? pour cela, on peut utiliser la syntaxe \verb?@service2? qui indique au conteneur de service de chercher un service appelé \verb?service2 et de transmettre une instance au constructeur de \verb?Service2?
 
 \begin{verbatim}
 
@@ -62,7 +62,7 @@ La classe \verb?Service1? a bessoin d'une instance de \verb?Service2? pour cela,
 \end{verbatim}
 \paragraph{}
 Pour finir, lorsque l'on déclare un service, il peut être taggé comme le montre l'exemple ci-dessus avec le paramètre \verb?tags?.
-L'intérét d'avoir des services taggé et de pouvoir récupérer tous les services qui posséde un certains tag. c'est notamment utilisé par le pattern stratégie, que je vous ai présenté dans la section précédente, pour récupérer les differentes stratégie.
+L'intérêt d'avoir des services taggé et de pouvoir récupérer tous les services qui possède un certains tag. c'est notamment utilisé par le pattern stratégie, que je vous ai présenté dans la section précédente, pour récupérer les différentes stratégie.
 \paragraph{}
 Ce type d'architecture est appelé \og architecture orienté service \fg{} et n'est pas spécifique à Symfony ou même à PHP.
 \subsection{Conteneur}
