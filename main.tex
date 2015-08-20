@@ -62,7 +62,6 @@ pdfstartview={FitH}}                    % ajuste la page à la largueur de l'éc
 
 \tableofcontents
 \thispagestyle{empty}
-\setcounter{page}{0}
 %ne pas numéroter le sommaire
 
 %espacement entre les lignes d'un tableau
@@ -73,7 +72,6 @@ pdfstartview={FitH}}                    % ajuste la page à la largueur de l'éc
 ~
 \thispagestyle{empty}
 %recommencer la numérotation des pages à "1"
-\setcounter{page}{0}
 \newpage
 \input{./introduction.tex}
 \part{L'entreprise}
@@ -85,6 +83,7 @@ pdfstartview={FitH}}                    % ajuste la page à la largueur de l'éc
 \part{Organisation du développement}
 \input{organisation.tex}
 \input{bilan.tex}
+\input{annexes.tex}
 \newpage
 
 %récupérer les citation avec "/footnotemark"
@@ -96,4 +95,5 @@ pdfstartview={FitH}}                    % ajuste la page à la largueur de l'éc
 \bibliography{bibliographie.bib}
 %voir wiki pour plus d'information sur la syntaxe des entrées d'une bibliographie
 
+%annexe 
 \end{document}

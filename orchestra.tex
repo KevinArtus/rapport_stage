@@ -47,20 +47,20 @@
 	       Ainsi, lorsque que l'on désire afficher un bloc, il suffit de demander au manager d'afficher ce bloc, ce dernier va chercher parmi les stratégies qu'il connait celle qui supporte (méthode \verb?support?) le bloc et s'il en trouve une alors il exécute la méthode (\verb?show?) de la stratégie.
 	        
 	      	\paragraph{}
-	      	Par défaut, le CMS propose de nombreux types blocs  comme par exemple un bloc pour lister un type de contenu, afficher un texte formaté, afficher un carrousel ou un média, un menu, une carte, un bloc de contact, etc.
+	      	Par défaut, le CMS propose de nombreux types blocs (annexe ~\ref{annexe_bloc}) comme par exemple un bloc pour lister un type de contenu, afficher un texte formaté, afficher un carrousel ou un média, un menu, une carte, un bloc de contact, etc.
 	      \paragraph{}
 	      	 Bien-sûr, il est possible pour un intégrateur \footnote{Dans le cadre de ce rapport un intégrateur indique une personne ou une équipe qui utilise Open Orchestra afin de  l'étendre pour des besoins particuliers}, de créer son propre type de bloc, il lui suffit de développer les différentes stratégies (affichage en front et back-office, formulaire en back-office, etc) nécessaires à un bloc.  
          \subsection{Nodes}
          \paragraph{}
          Un des points central d'un CMS est les pages. Sur Open Orchestra les pages sont identifiées comme des noeuds (\og nodes \fg{}).
-          Les nodes sont simplement des conteneurs qui contiennent des zones. Les zones permettent d'organiser la page, elles contiennent des sous-zones ou des blocs ce qui permet un découpage fin de la page pour simplifier sont organisation. 
+          Les nodes sont simplement des conteneurs qui contiennent des zones. Les zones permettent d'organiser la page, elles contiennent des sous-zones ou des blocs (annexe ~\ref{annexe_node}) ce qui permet un découpage fin de la page pour simplifier sont organisation. 
          \paragraph{}
          Il existe trois types de nodes : 
          \begin{itemize}
          \item[]
          \item  Les nodes qui représentent les pages visibles en \og front \fg{}.
           \item[]
-         \item  Les \og node tranverse \fg{} qui contiennent les blocs transverses, c'est-à-dire les blocs qui sont communs à plusieurs pages comme le bloc \og menu \fg{} ou encore le bloc \og footer \fg{}.
+         \item  Les \og node tranverse \fg{} qui contiennent les blocs transverses, c'est-à-dire les blocs qui sont communs à plusieurs pages comme un bloc \og menu \fg{} ou encore un bloc \og footer \fg{}.
           \item[]
          \item Le dernier type de node est celui qui permet de contribuer les pages d'erreurs (404, 503) d'un site.
          \item[]
@@ -75,9 +75,16 @@
         \label{node}
       \end{figure}
          \subsection{Content type}
-         Le second point important d'un CMS est les contenus avec Open Orchestra il est facile de créer des types de contenus (actualité, client, etc, ...).
+         Le second point important d'un CMS est les contenus, avec Open Orchestra il est facile de créer des types de contenus (actualité, client, etc, ...).
           \paragraph{}
-          En effet, Open Orchestra propose une approche graphique grâce à un formulaire pour créer ou éditer des types de contenus comme l'illustre la figure.
+          En effet, Open Orchestra propose une approche graphique grâce à un formulaire pour créer ou éditer des types de contenus comme l'illustre la figure~\ref{content_type}.
+             		\begin{figure}[H]
+        \begin{center}
+          \includegraphics[scale=0.5]{images/content_type}
+        \end{center}
+        \caption{Formulaire d'édition du type de contenu news}
+        \label{content_type}
+      \end{figure}
           Un type de contenu est composé de différents champs avec différentes options, par exemple pour un champ de type texte il peut y avoir une option pour limiter le nombre de caractère ou encore une valeur par défaut.
           \paragraph{}
           Par défaut, Open Orchestra offre une liste de types de champs (date, texte, monnaie, média, email, entier, zone de texte riche, etc) qui comme pour tous les composants d'Open Orchestra peut être étendu par d'autre type de champ personnalisé. 
@@ -89,7 +96,8 @@
    \paragraph{}
    Comme nous l'avons vu dans la section~\ref{Blocs} sur Open Orchestra les pages sont déjà découpées en différents blocs ainsi l'utilisation de l'ESI est adapté et permet une amélioration significative des performances.
    \paragraph{}
-   Si nous reprenons l'exemple de notre page (schéma~\ref{node}), le schéma~\ref{esi} présente le processus effectué par le serveur dans le cas où les blocs \verb?header? et \verb?footer? sont déjà en cache lorsqu'un utilisateur demande la page.
+   Si nous reprenons l'exemple de notre page (schéma~\ref{node}), le schéma~\ref{esi} présente le processus effectué par le serveur dans le cas où les blocs \verb?header? et \verb?footer? sont déjà en cache lorsqu'un utilisateur demande la page.`
+   \paragraph{}
    		\begin{figure}[H]
         \begin{center}
           \includegraphics[scale=0.75]{images/esi}
@@ -100,6 +108,7 @@
    
    \subsection{Modularités}
    Comme je vous l'expliquais en introduction la principale particularité d'Open Orchestra est sa modularité. Pour cela, les différents composants du CMS sont répartis dans différents bundles ~\ref{bundle}
+   \paragraph{}
    \begin{itemize}
    \item \textbf{open-orchestra-base-bundle} : Classes communes au back-office et front-office
             \item[]
