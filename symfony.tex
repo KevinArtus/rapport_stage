@@ -1,7 +1,7 @@
 \chapter{Concepts clés}
 Symfony2 est un framework MVC PHP open source développé par l'entreprise SensioLabs. Il dispose d'une très grande communauté et d'un large panel de modules (\og{}Bundles\fg{}) développés par cette communauté.
 \paragraph{}
-Dans ce chapitre, je ne vais pas revenir sur les concepts de base et tous les composants de Symfony 2 (controlleur, routing, etc) mais je vais vous présenter quelque concepts clé utilisé par Symfony 2 qui permettent justement le faible couplage d'Open Orchestra.
+Dans ce chapitre, je ne vais pas revenir sur les concepts de base et tous les composants de Symfony 2 (controlleur, routing, etc) mais je vais vous présenter quelques concepts clé utilisés par Symfony 2 qui permettent justement le faible couplage d'Open Orchestra.
 \section{Bundles}
 \label{bundle}
 Un bundle Symfony est un repertoire qui contient un ensemble de fichiers structurés (contrôleur, entité commande, listener, formulaire) qui permettent d'implémenter une fonctionnalité réutilisable dans n'importe quelle application Symfony2. Sous Symfony2 presque tout est découpé en bundle même le kernel du framework.
@@ -25,28 +25,28 @@ Les différentes classes et fichiers d'un bundle sont organisé selon l'architec
 \item[]
 \item \textbf{Command} Contient les commandes du bundles
 \item \textbf{Controller} Contient les contrôleurs du bundles
-\item \textbf{DependencyInjection} Contient les classes qui peuvent importer la configuration de servcies, ajouter des passes de compilation, je reviendrai plus en détail sur ce repertoire par la suite
+\item \textbf{DependencyInjection} Contient les classes qui permettent la configuration du bundle : importer la configuration des services, ajouter des passes de compilation.
 \item \textbf{EventListener} Les listeners d'évènements du bundle
 \item \textbf{Tests} Tests unitaires et fonctionnels du bundle
-\item \textbf{Resources/config/} Configuration du bundle (routage, déclarations de service, etc)
-\item \textbf{Resources/views/} Templates (vues) utilisé dans le bundle
+\item \textbf{Resources/config/} Configuration du bundle (routage, déclarations des services, etc)
+\item \textbf{Resources/views/} Templates (vues) utilisés dans le bundle
 \item \textbf{Resources/public/} Ressources web (js, css, images, etc)
 \end{itemize}
 \paragraph{}
 \label{configuration}
-Pour permettre une plus grande flexibilité un bundle peut définir sa propre configuration . En effet chaque bundle possède une classe \verb?Extension? qui se trouve dans le répertoire \verb?DependencyInjection?, cette classe permet de charger la configuration du bundle qui se trouve dans le répertoire \verb?config?, de plus elle permet de manipuler cette configuration comme par exemple l'étendre avec la configuration générale de l'application (\verb?app/config?) ou encore déclarer des services dynamiquement selon une configuration.
+Pour permettre une plus grande flexibilité un bundle peut définir sa propre configuration . En effet chaque bundle possède une classe \verb?Extension? qui se trouve dans le répertoire \verb?DependencyInjection?, cette classe permet de charger les différents fichier de configuration du bundle présent dans le répertoire \verb?config?, de plus elle permet de manipuler cette configuration comme par exemple l'étendre avec la configuration générale de l'application (\verb?app/config?) ou encore déclarer des services dynamiquement selon une configuration spécifique.
 \section{Conteneur de service}
 
 \subsection{Services}
 \paragraph{}
 Un service est simplement un objet qui réalise une fonction spécifique comme par exemple envoyer un mail. L'avantage d'avoir de nombreux services pour gérer les différentes fonctionnalités de son application est de permettre la séparation de son code et donc une plus grande flexibilité.
 \paragraph{}
-Avec Symfony2, pour créer un service il suffit de le déclarer dans un fichier de configuration (yaml, xml, php), en général ce fichier est appellé \verb?services.yml?
-et de charger ce fichier lors du chargement du bundle (~\ref{configuration}).
-Lorsque l'on déclare un service, il faut indiquer sa classe et éventuellement les différents arguments dont a besoin le service.
+Avec Symfony2, pour créer un service il suffit de le déclarer dans un fichier de configuration (yaml, xml, php), en général ce fichier est appelé \verb?services.yml?
+et de charger ce fichier lors du chargement du bundle.
+Lorsque l'on déclare un service, il faut indiquer sa classe et éventuellement les différents arguments dont peut avoir besoin le service.
 \paragraph{}
-Par exemple, le fichier de configuration yaml suivant déclare deux services, \verb?service2? et \verb?service2?.
-La classe \verb?Service1? a besoin d'une instance de \verb?Service2? pour cela, on peut utiliser la syntaxe \verb?@service2? qui indique au conteneur de service de chercher un service appelé \verb?service2 et de transmettre une instance au constructeur de \verb?Service2?
+Par exemple, le fichier de configuration yaml suivant déclare deux services, \verb?service1? et le \verb?service2?.
+La classe \verb?Service1? a besoin d'une instance de \verb?Service2? pour fonctionner, pour cela, on peut utiliser la syntaxe \verb?@service2? qui indique au conteneur de service de chercher un service appelé \verb?service2? et de transmettre une instance au constructeur du \verb?Service1? lorsque celui-ci est instancié (ce principe est appelé injection de dépendance) .
 
 \begin{verbatim}
 
@@ -61,14 +61,14 @@ La classe \verb?Service1? a besoin d'une instance de \verb?Service2? pour cela, 
 
 \end{verbatim}
 \paragraph{}
-Pour finir, lorsque l'on déclare un service, il peut être taggé comme le montre l'exemple ci-dessus avec le paramètre \verb?tags?.
-L'intérêt d'avoir des services taggé et de pouvoir récupérer tous les services qui possèdent un certains tag. c'est notamment utilisé par le pattern stratégie, que je vous ai présenté dans la section précédente, pour récupérer les différentes stratégies.
+Pour finir, lorsqu'un service est déclaré, il peut être taggé comme le présente l'exemple ci-dessus grâce au paramètre \verb?tags?.
+Ainsi grâce aux tags il est possible de récupérer tous les services qui possèdent un certains tag. cela est notamment utilisé par le pattern stratégie, que je vous ai présenté dans la section précédente, pour récupérer les différentes stratégies afin de les transmettre au manager de la stratégie.
 \paragraph{}
 Ce type d'architecture est appelé \og architecture orientée services \fg{} et n'est pas spécifique à Symfony ou même à PHP.
 \subsection{Conteneur}
 Les différents services sont gérés par le conteneur de service. Le conteneur de service est un objet qui gère tous les services, récupération d'un service, instanciation d'un service, etc.
 \paragraph{}
-Par exemple, supposons que nous avons deux services (service1, service2) et que le service 1 a besoin du service2. Lorsque l'on fait appelle au service1 le schéma~\ref{conteneur} décrit le fonctionnement du conteneur de service pour récupérer le service.
+Par exemple, supposons que nous avons les même services (service1, service2) que l'exemple précédent. Le schéma~\ref{conteneur} décrit le fonctionnement du conteneur de service lorsque \verb?service1? est demandé :
 		\begin{figure}[H]
         \begin{center}
           \includegraphics[scale=0.8]{images/conteneur_service}
